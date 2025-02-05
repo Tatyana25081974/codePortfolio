@@ -72,11 +72,11 @@ if (!contactForm) {
 
 // Функції для повідомлень
 function showSuccessMessage(message) {
-  alert(message); // Можна замінити на кастомне модальне вікно
+  alert(message); 
 }
 
 function showErrorMessage(message) {
-  alert(message); // Або зробити кастомний error popup
+  alert(message); 
 }
 
 
