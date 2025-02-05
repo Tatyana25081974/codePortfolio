@@ -7,27 +7,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   function renderReviews(reviews) {
-   
     reviewsList.innerHTML = '';
-
-    
-    reviews.forEach(review => {
-      
+  
+    const customReviews = [
+      { avatar: 'img/content/Reviews/my-photo1.jpg', author: 'Natalia', review: 'Work with was extraordinary! He turned out to be a very competent and responsible specialist. The projects were completed on time and the result exceeded my expectations' },
+      { avatar: 'img/content/Reviews/my-photo2.jpg', author: 'Dmytro', review: 'I have the honor to recommend him as an exceptional professional in his field. His knowledge and expertise are undeniable. Cooperation with him always brings impressive results.' },
+      { avatar: 'img/content/Reviews/my-photo3.jpg', author: 'Anna', review: 'The developed project impresses with its quality and efficiency. The code is cleanly written and the functionality exceeds expectations. Extremely satisfied with the cooperation!' },
+      { avatar: 'img/content/Reviews/my-photo4.jpg', author: 'Ivetta', review: 'Thanks for the excellent work on the project! His talent and professionalism deserve recognition. I recommend it to everyone who is looking for an expert in the field of software development.' }
+    ];
+  
+    customReviews.forEach(customReview => {
       const reviewItem = document.createElement('li');
       reviewItem.classList.add('swiper-slide', 'reviews-list-item');
-      
+  
       reviewItem.innerHTML = `
-                <img class="review-image" src="images/my-photo${reviews.indexOf(review) + 1}.jpg" alt="${review.author}" width="48" height="48">
-                <h3 class="reviews-names">${review.author}</h3>
-                <p class="reviews-text">${review.review}</p>
-            `;
-      
+        <img class="review-image" src="${customReview.avatar}" alt="${customReview.author}" width="48" height="48">
+        <h3 class="reviews-names">${customReview.author}</h3>
+        <p class="reviews-text">${customReview.review}</p>
+      `;
+  
       reviewsList.appendChild(reviewItem);
     });
-
   
     requestAnimationFrame(equalizeReviewHeights);
   }
+  
 
  
   function equalizeReviewHeights() {

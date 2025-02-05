@@ -70,6 +70,7 @@
   
   .review-image {
     margin-bottom: 32px;
+    border-radius: 10px;
   }
   
   .reviews-names {
