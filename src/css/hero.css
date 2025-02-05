@@ -16,8 +16,9 @@
 }
 
 /* ====== Підтримка Retina-дисплеїв (мобільні) ====== */
-@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2),
-(max-width: 767px) and (min-resolution: 192dpi) {
+@media  screen and (min-device-pixel-ratio: 2),
+ screen and (min-resolution: 192dpi),
+ screen and (min-resolution: 2dppx) {
     .hero {
         background: url("../img/bg/heromobile-bg@2x.png") no-repeat center;
         background-size: cover;
@@ -35,6 +36,11 @@
     color: #fafafa;
     max-width: 343px;
     margin-bottom: 212px;
+}
+@media screen and (max-width: 330px) {
+    .hero-title {
+        font-size: 50px;
+    }
 }
 
 /* ====== Соцмережі ====== */
@@ -128,8 +134,9 @@
 }
 
 /* ====== Підтримка Retina-дисплеїв (планшети) ====== */
-@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-(min-width: 768px) and (min-resolution: 192dpi) {
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
     .hero {
         background: url("../img/bg/herotablet-bg@2x.png") no-repeat center;
         background-size: cover;
@@ -180,8 +187,9 @@
 }
 
 /* ====== Підтримка Retina-дисплеїв (десктопи) ====== */
-@media (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
-(min-width: 1440px) and (min-resolution: 192dpi) {
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
     .hero {
         background:
             linear-gradient(to left, black 50%, transparent 50%) left / 100% 100% no-repeat,
