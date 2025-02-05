@@ -8,45 +8,74 @@ import './slider.js';     // Swiper.js для слайдерів
 import { fetchProjects, fetchReviews, submitForm } from './api.js'; // API-запити
 
 // =========================
-// 🔹 Завантаження проєктів
+// 🔹 Завантаження проєктів та відгуків
 // =========================
 document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const projects = await fetchProjects(); // Отримуємо проєкти
-    console.log('Projects:', projects);
+  const projectsContainer = document.querySelector('#projects-container');
+  const reviewsContainer = document.querySelector('#reviews-container');
 
-    const reviews = await fetchReviews(); // Отримуємо відгуки
-    console.log('Reviews:', reviews);
+  try {
+    const projects = await fetchProjects();
+    if (!projects || projects.length === 0) {
+      console.warn('⚠️ Немає доступних проєктів!');
+      if (projectsContainer) projectsContainer.innerHTML = '<p>❌ Немає доступних проєктів.</p>';
+    } else {
+      console.log('Projects:', projects);
+    }
+
+    const reviews = await fetchReviews();
+    if (!reviews || reviews.length === 0) {
+      console.warn('⚠️ Немає відгуків!');
+      if (reviewsContainer) reviewsContainer.innerHTML = '<p>❌ Відгуки недоступні.</p>';
+    } else {
+      console.log('Reviews:', reviews);
+    }
   } catch (error) {
-    console.error('Помилка при отриманні даних з API:', error);
+    console.error('❌ Помилка отримання даних з API:', error);
+    if (projectsContainer) projectsContainer.innerHTML = `<p>❌ Не вдалося отримати проєкти: ${error.message || 'сервер недоступний'}</p>`;
+    if (reviewsContainer) reviewsContainer.innerHTML = `<p>❌ Не вдалося отримати відгуки: ${error.message || 'сервер недоступний'}</p>`;
   }
 });
 
 // =========================
 // 🔹 Обробка форми "Work Together"
 // =========================
-const contactForm = document.querySelector('#contact-form'); // Знаходимо форму
+const contactForm = document.querySelector('#contact-form');
 
-if (contactForm) {
+if (!contactForm) {
+  console.warn('⚠️ Форма #contact-form не знайдена на сторінці.');
+} else {
   contactForm.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Відключаємо стандартну поведінку форми
+    event.preventDefault();
 
-    // Отримуємо дані з форми
     const formData = {
       name: contactForm.elements.name.value.trim(),
       email: contactForm.elements.email.value.trim(),
       message: contactForm.elements.message.value.trim(),
     };
 
-    // Відправляємо дані через API
-    const response = await submitForm(formData);
-    console.log('Form Response:', response);
+    try {
+      const response = await submitForm(formData);
+      console.log('Form Response:', response);
 
-    if (response.success) {
-      alert('Форма успішно відправлена!');
-      contactForm.reset(); // Очищаємо форму
-    } else {
-      alert('Помилка надсилання форми. Спробуйте ще раз.');
+      if (response.success) {
+        showSuccessMessage('✅ Форма успішно відправлена!');
+        contactForm.reset();
+      } else {
+        showErrorMessage(response.error || '❌ Помилка! Спробуйте ще раз.');
+      }
+    } catch (error) {
+      showErrorMessage('❌ Сервер недоступний. Перевірте підключення.');
+      console.error('❌ Помилка надсилання форми:', error);
     }
   });
+}
+
+// Функції для повідомлень
+function showSuccessMessage(message) {
+  alert(message); // Можна замінити на кастомне модальне вікно
+}
+
+function showErrorMessage(message) {
+  alert(message); // Або зробити кастомний error popup
 }
