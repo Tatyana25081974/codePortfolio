@@ -137,27 +137,17 @@ screen and (min-resolution: 2dppx) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     width: 100%;
     min-height: 100vh;
     padding: 32px;
-    background-color: #000;
+    background:
+        url("../img/bg/herodesktop-bg.png") left / 50% 100% no-repeat,
+        #1C1D20 right / 50% 100% no-repeat;
+    /* Однорідний темний фон без полоски */
+    background-color: #1C1D20;
     position: relative;
 }
-
-/* ====== Фонова частина (градієнт + blur) ====== */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 728px;
-    /* Точна ширина кольорового блоку */
-    background: linear-gradient(to right, rgba(237, 59, 68, 1), rgba(0, 0, 0, 0.6));
-    backdrop-filter: blur(4px);
-    /* Додаємо блюр */
-}
-
 /* ====== Заголовок Hero ====== */
 .hero-title {
     font-family: "Inter Tight", sans-serif;
@@ -166,13 +156,22 @@ screen and (min-resolution: 2dppx) {
     line-height: 1;
     letter-spacing: -0.03em;
     text-transform: uppercase;
-    color: #fafafa;
-    max-width: 1084px;
-    height: 270px;
-    position: relative;
-    z-index: 2;
-}
+    color: #FAFAFA;
 
+    /* Оновлені розміри */
+    width: 1084px;
+    height: 270px;
+
+    /* Оновлене позиціонування */
+    position: absolute;
+    top: 180px;
+    /* Піднімаємо трохи вище */
+    left: 178px;
+    /* Вирівнюємо по макету */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 /* ====== Соцмережі ====== */
 .social-links {
     display: flex;
