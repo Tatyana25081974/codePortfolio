@@ -137,7 +137,7 @@ screen and (min-resolution: 2dppx) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    text-align: left;
+    text-align: center;
     width: 100%;
     min-height: 100vh;
     padding: 32px;
@@ -153,8 +153,6 @@ screen and (min-resolution: 2dppx) {
     left: 0;
     width: 728px;
     /* Точна ширина кольорового блоку */
-    height: 900px;
-    /* Висота */
     background: linear-gradient(to right, rgba(237, 59, 68, 1), rgba(0, 0, 0, 0.6));
     backdrop-filter: blur(4px);
     /* Додаємо блюр */
@@ -196,6 +194,7 @@ screen and (min-resolution: 2dppx) {
     height: 55px;
     padding: 18px 20px;
     border: 1px solid rgba(250, 250, 250, 0.2);
+    color: #fafafa;
     border-radius: 60px;
     transition: background-color 0.3s, border-color 0.3s;
 }
