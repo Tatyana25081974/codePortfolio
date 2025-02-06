@@ -138,7 +138,7 @@ screen and (min-resolution: 2dppx) {
         align-items: flex-start;
         justify-content: center;
         padding: 32px;
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 50%, transparent 50%) left / 100% 100% no-repeat,
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.85) 50%, transparent 50%) left / 100% 100% no-repeat,
             url("../img/bg/herodesktop-bg.png") right / cover no-repeat;
     }
 
@@ -149,6 +149,7 @@ screen and (min-resolution: 2dppx) {
         margin: 0 auto 100px;
     }
 
+    /* ====== Social-links праворуч внизу ====== */
     .social-links {
         display: flex;
         align-items: center;
@@ -168,7 +169,9 @@ screen and (min-resolution: 2dppx) {
         height: 55px;
         padding: 18px 20px;
         border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 60px;
+        border-radius: 50%;
+        color: #ffffff;
+        /* Робимо іконки білими */
         transition: background-color 0.3s, border-color 0.3s;
     }
 
@@ -177,9 +180,34 @@ screen and (min-resolution: 2dppx) {
         border-color: #ED3B44;
     }
 
+    /* ====== Email-посилання (прямокутне) ====== */
     .email-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 16px;
+        width: 223px;
+        height: 55px;
         text-align: left;
+        border: 1px solid rgba(250, 250, 250, 0.2);
+        color: #ffffff;
+        border-radius: 8px;
+        padding: 12px;
+        transition: opacity 0.3s;
+    }
+
+    .email-link:hover {
+        opacity: 0.8;
+    }
+
+    /* ====== Підписи під іконками (білі) ====== */
+    .social-links a::after {
+        content: attr(aria-label);
+        display: block;
+        font-size: 14px;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 5px;
     }
 
     /* ====== Підтримка Retina-дисплеїв (десктопи) ====== */
@@ -187,7 +215,7 @@ screen and (min-resolution: 2dppx) {
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
         .hero {
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 50%, transparent 50%) left / 100% 100% no-repeat,
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.85) 50%, transparent 50%) left / 100% 100% no-repeat,
                 url("../img/bg/herodesktop-bg@2x.png") right / cover no-repeat;
         }
     }
