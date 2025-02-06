@@ -1,19 +1,48 @@
-/* Styles for Mobile devices */
+/* Загальні стилі */
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: "Inter Tight", sans-serif;
+    color: #fafafa;
+
+}
+
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+/* Контейнер для адаптивної верстки */
 .container {
-  min-width: 320px;
-  max-width: 375px;
-  margin: 0 auto;
-  padding: 0 16px;
+    width: 100%;
+    /* Гумовий дизайн на мобільних пристроях */
+    max-width: 375px;
+    /* Фіксована ширина з 375px */
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
-/* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+
+/* Адаптація для планшетів (з 768px) */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
+
+/* Адаптація для десктопів (з 1440px) */
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 }
+
+
+
