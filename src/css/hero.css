@@ -138,8 +138,22 @@ screen and (min-resolution: 2dppx) {
         align-items: flex-start;
         justify-content: center;
         padding: 32px;
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.85) 50%, transparent 50%) left / 100% 100% no-repeat,
+        background:
+            linear-gradient(to left, rgba(0, 0, 0, 0.85) 50%, transparent 50%) left / 100% 100% no-repeat,
             url("../img/bg/herodesktop-bg.png") right / cover no-repeat;
+        position: relative;
+    }
+
+    /* ====== Градієнтний шар для плавного переходу ====== */
+    .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+        pointer-events: none;
     }
 
     .hero-title {
@@ -147,6 +161,8 @@ screen and (min-resolution: 2dppx) {
         max-width: 1084px;
         text-align: center;
         margin: 0 auto 100px;
+        position: relative;
+        z-index: 2;
     }
 
     /* ====== Social-links праворуч внизу ====== */
@@ -161,23 +177,29 @@ screen and (min-resolution: 2dppx) {
         bottom: 32px;
     }
 
+    /* ====== Іконки соцмереж у кружечках ====== */
     .social-links a {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 55px;
         height: 55px;
-        padding: 18px 20px;
-        border: 1px solid rgba(250, 250, 250, 0.2);
         border-radius: 50%;
-        color: #ffffff;
-        /* Робимо іконки білими */
+        border: 1px solid rgba(250, 250, 250, 0.2);
         transition: background-color 0.3s, border-color 0.3s;
     }
 
     .social-links a:hover {
         background-color: #ED3B44;
         border-color: #ED3B44;
+    }
+
+    /* ====== SVG-іконки соцмереж ====== */
+    .social-links svg {
+        width: 24px;
+        height: 24px;
+        fill: #ffffff;
+        /* Робимо іконки білими */
     }
 
     /* ====== Email-посилання (прямокутне) ====== */
@@ -200,22 +222,13 @@ screen and (min-resolution: 2dppx) {
         opacity: 0.8;
     }
 
-    /* ====== Підписи під іконками (білі) ====== */
-    .social-links a::after {
-        content: attr(aria-label);
-        display: block;
-        font-size: 14px;
-        text-align: center;
-        color: #ffffff;
-        margin-top: 5px;
-    }
-
     /* ====== Підтримка Retina-дисплеїв (десктопи) ====== */
     @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
         .hero {
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.85) 50%, transparent 50%) left / 100% 100% no-repeat,
+            background:
+                linear-gradient(to left, rgba(0, 0, 0, 0.85) 50%, transparent 50%) left / 100% 100% no-repeat,
                 url("../img/bg/herodesktop-bg@2x.png") right / cover no-repeat;
         }
     }
