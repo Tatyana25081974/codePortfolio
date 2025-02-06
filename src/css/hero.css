@@ -137,42 +137,58 @@ screen and (min-resolution: 2dppx) {
     .hero {
         align-items: flex-start;
         justify-content: center;
-        padding: 300px 32px;
-        background: linear-gradient(to left, black 50%, transparent 50%) left / 100% 100% no-repeat,
+        padding: 32px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 50%, transparent 50%) left / 100% 100% no-repeat,
             url("../img/bg/herodesktop-bg.png") right / cover no-repeat;
     }
 
     .hero-title {
         font-size: 90px;
         max-width: 1084px;
-        text-align: left;
-        margin-bottom: 813px;
+        text-align: center;
+        margin: 0 auto 100px;
     }
 
     .social-links {
-        gap: 80px;
-        justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        width: 100%;
+        position: absolute;
+        right: 32px;
+        bottom: 32px;
     }
 
     .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 55px;
         height: 55px;
         padding: 18px 20px;
+        border: 1px solid rgba(250, 250, 250, 0.2);
+        border-radius: 60px;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .social-links a:hover {
+        background-color: #ED3B44;
+        border-color: #ED3B44;
     }
 
     .email-link {
         font-size: 16px;
-        width: 473px;
-        text-align: center;
+        text-align: left;
     }
-}
 
-/* ====== Підтримка Retina-дисплеїв (десктопи) ====== */
-@media screen and (min-device-pixel-ratio: 2),
-screen and (min-resolution: 192dpi),
-screen and (min-resolution: 2dppx) {
-    .hero {
-        background: linear-gradient(to left, black 50%, transparent 50%) left / 100% 100% no-repeat,
-            url("../img/bg/herodesktop-bg@2x.png") right / cover no-repeat;
+    /* ====== Підтримка Retina-дисплеїв (десктопи) ====== */
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        .hero {
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.7) 50%, transparent 50%) left / 100% 100% no-repeat,
+                url("../img/bg/herodesktop-bg@2x.png") right / cover no-repeat;
+        }
     }
 }
