@@ -1,4 +1,10 @@
-/* Загальні стилі */
+
+/* ====== 🌍 Глобальні стилі для проєкту ====== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 .hidden {
   display: none;
 }
@@ -6,13 +12,11 @@
 body {
   font-family: "Inter Tight", sans-serif;
   color: #fafafa;
-  
+
 }
 
-::after,
-::before {
-  box-sizing: border-box;
-}
+
+
 /* Контейнер для адаптивної верстки */
 .container {
   width: 100%;
@@ -42,7 +46,6 @@ body {
     padding-right: 32px;
   }
 }
-
 
 
 
