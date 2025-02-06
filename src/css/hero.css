@@ -7,7 +7,7 @@
     text-align: center;
     width: 100%;
     min-height: 100vh;
-    padding: 281px 16px;
+    padding:  16px;
 
     /* Фон для мобільних */
     background-image: url("../img/bg/heromobile-bg.png");
@@ -94,13 +94,13 @@ screen and (min-resolution: 2dppx) {
     .hero {
         align-items: flex-start;
         justify-content: center;
-        padding: 300px 32px 32px;
+        padding: 32px 32px;
         background-image: url("../img/bg/herotablet-bg.png");
     }
 
     .hero-title {
         font-size: 90px;
-        max-width: 632px;
+        
         margin-bottom: 187px;
         text-align: left;
     }
@@ -131,39 +131,47 @@ screen and (min-resolution: 2dppx) {
         background-image: url("../img/bg/herotablet-bg@2x.png");
     }
 }
-/* ======= Головна секція Hero ======= */
+/* ======= дисктопна версія  ======= */
 .hero {
     position: relative;
-    width: 100%;
-    min-height: 100vh;
+        width: 100%;
+        height: 900px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 178px;
+       
+           
     
     background:
         url("../img/bg/herodesktop-bg.png") left / 50% 100% no-repeat,
         #1C1D20 right / 50% 100% no-repeat;
     background-color: #1C1D20;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    
+    
 }
 
 /* ======= Заголовок Hero ======= */
 /* Стилі для заголовка */
-.hero-title {
-    font-family: "Inter Tight", sans-serif;
-    font-size: 96px;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: #FAFAFA;
-    max-width: 1084px;
-    height: 270px;
-    text-align: left;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+
+    .hero-title {
+            font-size: 90px;
+            font-weight: 500;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: #FAFAFA;
+    
+            max-width: 1084px;
+            width: 100%;
+            text-align: left;
+    
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
 /* Контейнер соцмереж + пошта */
 .social-container {
     display: flex;
@@ -195,7 +203,9 @@ screen and (min-resolution: 2dppx) {
     text-decoration: none;
     transition: opacity 0.3s;
 }
-
+.social-link svg {
+    fill: #FAFAFA !important;
+}
 .social-link:hover {
     opacity: 0.8;
 }
