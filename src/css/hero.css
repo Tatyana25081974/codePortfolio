@@ -50,7 +50,7 @@ screen and (min-resolution: 2dppx) {
     display: flex;
     gap: 4px;
     justify-content: center;
-    margin: 0 16px 32px;
+    
 }
 
 /* ====== Стилі для посилань (іконок соцмереж) ====== */
@@ -82,7 +82,7 @@ screen and (min-resolution: 2dppx) {
     color: #fafafa;
     text-decoration: none;
     transition: opacity 0.3s;
-    margin-top: 32px;
+    
 }
 
 .email-link:hover {
@@ -118,7 +118,7 @@ screen and (min-resolution: 2dppx) {
 
     .email-link {
         font-size: 16px;
-        margin-top: 19px;
+        
         text-align: right;
     }
 }
@@ -136,7 +136,7 @@ screen and (min-resolution: 2dppx) {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 32px;
+    
     background:
         url("../img/bg/herodesktop-bg.png") left / 50% 100% no-repeat,
         #1C1D20 right / 50% 100% no-repeat;
@@ -173,7 +173,7 @@ screen and (min-resolution: 2dppx) {
     /* Щоб всі елементи були справа */
     gap: 8px;
     position: absolute;
-    
+    bottom: 32px;
     right: 32px;
 }
 
