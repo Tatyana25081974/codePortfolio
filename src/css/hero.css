@@ -131,58 +131,51 @@ screen and (min-resolution: 2dppx) {
         background-image: url("../img/bg/herotablet-bg@2x.png");
     }
 }
-/*===Дисктоп===*/
+/* ======= Головна секція Hero ======= */
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
+    position: relative;
     width: 100%;
     min-height: 100vh;
     padding: 32px;
     background:
         url("../img/bg/herodesktop-bg.png") left / 50% 100% no-repeat,
         #1C1D20 right / 50% 100% no-repeat;
-    /* Однорідний темний фон без полоски */
     background-color: #1C1D20;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-/* ====== Заголовок Hero ====== */
+
+/* ======= Заголовок Hero ======= */
 .hero-title {
     font-family: "Inter Tight", sans-serif;
     font-weight: 500;
     font-size: 90px;
-    line-height: 1;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     text-transform: uppercase;
     color: #FAFAFA;
-
-    /* Оновлені розміри */
-    width: 1084px;
-    height: 270px;
-
-    /* Оновлене позиціонування */
+    max-width: 1084px;
     position: absolute;
-    top: 180px;
-    /* Піднімаємо трохи вище */
-    left: 178px;
-    /* Вирівнюємо по макету */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
 }
-/* ====== Соцмережі ====== */
+/* ======= Контейнер соц.мереж + email ======= */
+.social-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+}
+
+/* ======= Іконки соцмереж ======= */
 .social-links {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
     gap: 8px;
-    width: 473px;
-    height: 55px;
-    position: relative;
-    z-index: 2;
 }
 
 .social-links a {
@@ -191,10 +184,9 @@ screen and (min-resolution: 2dppx) {
     justify-content: center;
     width: 55px;
     height: 55px;
-    padding: 18px 20px;
     border: 1px solid rgba(250, 250, 250, 0.2);
-    color: #fafafa;
     border-radius: 60px;
+    color: #FAFAFA;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -203,21 +195,20 @@ screen and (min-resolution: 2dppx) {
     border-color: #ED3B44;
 }
 
-/* ====== Email-посилання ====== */
+/* ======= Email ======= */
 .email-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 223px;
-    height: 55px;
-    padding: 18px 24px;
+    padding: 0 24px;
     border: 1px solid rgba(250, 250, 250, 0.2);
     border-radius: 60px;
     color: #fafafa;
     text-decoration: none;
     transition: opacity 0.3s;
-    position: relative;
-    z-index: 2;
+    white-space: nowrap;
+    height: 55px;
+    line-height: 55px;
 }
 
 .email-link:hover {
