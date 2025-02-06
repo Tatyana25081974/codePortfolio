@@ -173,7 +173,7 @@ screen and (min-resolution: 2dppx) {
     /* Щоб всі елементи були справа */
     gap: 8px;
     position: absolute;
-    bottom: 32px;
+    
     right: 32px;
 }
 
