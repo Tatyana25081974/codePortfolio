@@ -1,8 +1,35 @@
 .reviews-section {
-    display: flex;
-    justify-content: center;
-    background-color: #1c1d20;
+  display: flex;
+  justify-content: center;
+  background-color: #1c1d20;
+  background-image: url("../img/reviews-bg.png"); 
+  background-size: cover;
+}
+
+@media screen and (min-resolution: 192dpi), screen and (min-device-pixel-ratio: 2) {
+  .reviews-section {
+    background-image: url("../img/reviews-bg@2x.png");
   }
+}
+
+@media screen and (min-width: 768px) {
+  .reviews-container {
+    margin-bottom: 96px;
+    width: 704px;
+    height: 458px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .reviews-container {
+    margin-bottom: 164px;
+    width: 1376px;
+    height: 458px;
+  }
+}
+
+/* решта стилів */
+
   
   .reviews-container {
     width: 343px;
