@@ -1,0 +1,153 @@
+/* Прихований заголовок для доступності */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.gallery-section {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #1c1d20;
+  background-size: cover;
+  background-position: center;
+}
+.gallery-general-wrap.container {
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Фон для різних пристроїв */
+.gallery-container {
+  position: relative;
+  height: 508px;
+  overflow: hidden;
+  background-image: url(../img/covers/x-elements-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* Retina-підтримка */
+@media screen and (min-resolution: 2dppx),
+  (min-resolution: 192dpi),
+  (-webkit-min-device-pixel-ratio: 2) {
+  .gallery-container {
+    background-image: url(../img/covers/x-elements-mobile@2x.png);
+  }
+}
+
+/* Список галереї */
+.gallery-list {
+  margin-top: 156px;
+  display: block;
+  position: absolute;
+}
+/* Елементи списку */
+.gallery-item {
+  display: flex;
+  transform: rotate(17deg);
+  gap: 40px;
+  margin-bottom: 20px;
+  height: 100%;
+  position: relative;
+  top: -360px;
+}
+
+.gallery-picture {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  animation-name: none;
+  animation-duration: 19s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.9);
+}
+
+.gallery-picture.animate-marquee {
+  animation-name: marqueeLine;
+}
+
+.gallery-img {
+  display: block;
+  width: 282px;
+  height: 162px;
+  object-fit: cover;
+  transform-origin: center;
+}
+
+@keyframes marqueeLine {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(-240%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .gallery-container {
+    height: 960px;
+    background-image: url(../img/covers/x-elements-tablet.png);
+  }
+
+  @media screen and (min-resolution: 2dppx),
+    (min-resolution: 192dpi),
+    (-webkit-min-device-pixel-ratio: 2) {
+    .gallery-container {
+      background-image: url(../img/covers/x-elements-tablet@2x.png);
+    }
+  }
+
+  .gallery-list {
+    margin-top: 286px;
+  }
+  .gallery-item {
+    margin-bottom: 52px;
+  }
+  .gallery-picture {
+    margin-right: 18px;
+  }
+  .gallery-img {
+    width: 544px;
+    height: 314px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .gallery-section {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+  .gallery-container {
+    background-image: url(../img/covers/x-elements-desktop.png);
+  }
+
+  @media screen and (min-resolution: 2dppx),
+    (min-resolution: 192dpi),
+    (-webkit-min-device-pixel-ratio: 2) {
+    .gallery-container {
+      background-image: url(../img/covers/x-elements-desktop@2x.png);
+    }
+  }
+
+  .gallery-item:nth-child(1) {
+    display: flex;
+  }
+  .gallery-list {
+    margin-top: -120px;
+  }
+}
