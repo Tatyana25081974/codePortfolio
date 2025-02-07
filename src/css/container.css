@@ -1,48 +1,129 @@
-/* Загальні стилі */
-.hidden {
-    display: none;
+/* ====== 🌍 Глобальні стилі для проєкту ====== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Inter Tight", sans-serif;
-    color: #fafafa;
-
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 400;
+  color: #fafafa;
+  background-color: #000;
+  line-height: 1.4;
 }
 
-::after,
-::before {
-    box-sizing: border-box;
+.hidden {
+  display: none;
 }
 
-/* Контейнер для адаптивної верстки */
+/* ====== Стилі заголовків ====== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+/* ====== Стилі тексту ====== */
+p {
+  font-size: 16px;
+  opacity: 0.8;
+  /* Використовуємо opacity замість rgba */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ====== Глобальні стилі контейнера ====== */
 .container {
+  width: 100%;
+  min-width: 320px;
+  /* Мінімальна ширина, щоб не було аномальних зменшень */
+  max-width: 375px;
+  /* Базовий розмір для мобільних */
+  padding: 16px;
+  margin: 0 auto;
+  /* Центрує контейнер */
+}
+
+/* ====== 📱 Гумова мобільна версія (320px - 374px) ====== */
+@media screen and (max-width: 374px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+/* ====== 📱 Адаптивна мобільна версія (375px - 767px) ====== */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+/* ====== 📲 Планшетна версія (768px - 1439px) ====== */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    max-width: 1200px;
+    padding: 24px 32px;
+  }
+}
+
+/* ======= 🖥️ Десктопна версія (1440px - 1919px) ======= */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    max-width: 1440px;
     width: 100%;
-    /* Гумовий дизайн на мобільних пристроях */
-    max-width: 375px;
-    /* Фіксована ширина з 375px */
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 32px;
+    margin: 0 auto;
+  }
 }
 
-/* Адаптація для планшетів (з 768px) */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 768px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+/* ======= 🖥️ Full HD і 4K монітори (1920px+) ======= */
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    padding: 40px;
+    margin: 0 auto;
+  }
 }
-
-/* Адаптація для десктопів (з 1440px) */
-@media screen and (min-width: 1440px) {
-    .container {
-        max-width: 1440px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-}
-
-
-
