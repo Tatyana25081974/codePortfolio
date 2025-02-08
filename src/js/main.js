@@ -3,7 +3,9 @@ import './modal.js';      // Модальне вікно
 import './form.js';       // Валідація форми
 import './accordion.js';  // Аккордеон для FAQ та About Me
 import './slider.js'; 
-import './swiper.reviews.js'   
+import './swiper.reviews.js';  
+import './faq.js';        // Додаємо імпорт FAQ (аккордеон)
+ 
 
 import { fetchProjects, fetchReviews, submitForm } from './api.js'; // API-запити
 
