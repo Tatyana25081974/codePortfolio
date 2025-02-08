@@ -20,7 +20,7 @@
   <script type="module" crossorigin src="/codePortfolio/index.js"></script>
   <link rel="modulepreload" crossorigin href="/codePortfolio/assets/vendor-CMVyawJ9.js">
   <link rel="stylesheet" crossorigin href="/codePortfolio/assets/vendor-Be9b3THL.css">
-  <link rel="stylesheet" crossorigin href="/codePortfolio/assets/index-DMsZAtgP.css">
+  <link rel="stylesheet" crossorigin href="/codePortfolio/assets/index-evGkxnti.css">
 </head>
 
 <body>
@@ -768,7 +768,82 @@
 
   </main>
 
-  
+  <section class="work-together-section">
+  <div class="container work-together-container">
+    <div class="work-together-title-container">
+      <a href="/index.html" class="work-together-logo">
+        <img
+          class="work-together-logo-foto"
+          srcset="../img/content/logo-foto.jpg 1x, ../img/content/logo-foto@2x.jpg 2x"
+          src="../img/content/logo-foto.jpg"
+          alt="logo-foto"
+          width="44"
+          height="44"
+        />
+      </a>
+      <h1 class="work-together-title">
+        Let&rsquo;s <span class="work-together-title-work">work</span>
+      </h1>
+    </div>
+    <h1 class="work-together-title">together</h1>
+    <form class="work-together-contact-form" id="contact-form">
+      <div class="work-together-form-email-container">
+        <input
+          class="work-together-form-email work-together-input"
+          type="email"
+          name="email"
+          placeholder="clients@gmail.com"
+          required
+          pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,10}$"
+        />
+        <p class="email-succes">Succes!</p>
+        <p class="email-invalid">Invalid email, try again</p>
+      </div>
+      <input
+        class="work-together-form-comments work-together-input"
+        type="text"
+        name="comments"
+        placeholder="comments"
+        required
+      />
+      <button class="work-together-button" type="submit">Send</button>
+    </form>
+    <ul class="work-together-contacts-list">
+      <li>
+        <a
+          class="work-together-email contacts"
+          href="mailto:lloydjefferson@gmail.com"
+          >lloydjefferson@gmail.com</a
+        >
+      </li>
+      <li>
+        <a class="work-together-tel contacts" href="tel:+3801111111111"
+          >+380 11 1111 11 11</a
+        >
+      </li>
+    </ul>
+  </div>
+  <!-- MODAL-WINDOW -->
+  <div class="work-together-modal modal-overlay">
+    <div class="work-together-container-modal">
+      <svg class="work-together-modal-close-icon" width="22" height="22">
+        <use href="../img/icons/sprite.svg#icon-x"></use>
+      </svg>
+      <div class="work-together-container-modal-text">
+        <h1 class="work-together-modal-title">
+          Thank you for your interest in cooperation!
+        </h1>
+        <p class="work-together-modal-text">
+          The manager will contact you shortly to discuss further details and
+          opportunities for cooperation. Please stay in touch.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- /MODAL-WINDOW -->
+</section>
+
 
 </body>
 
