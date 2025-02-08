@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
             faqItems.forEach((el) => {
                 if (el !== item) {
                     el.classList.remove("active");
-                    el.querySelector(".faq-answer").style.maxHeight = null;
+                    const answer = el.querySelector(".faq-answer");
+                    answer.style.maxHeight = null;
+                    setTimeout(() => {
+                        answer.style.opacity = "0"; // Плавне зникнення
+                    }, 200); // Трохи затримуємо перед зникненням
                 }
             });
 
@@ -20,8 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const answer = item.querySelector(".faq-answer");
             if (item.classList.contains("active")) {
                 answer.style.maxHeight = answer.scrollHeight + "px";
+                setTimeout(() => {
+                    answer.style.opacity = "1"; // Плавне підсвічування
+                }, 50);
             } else {
                 answer.style.maxHeight = null;
+                setTimeout(() => {
+                    answer.style.opacity = "0"; // Плавне згасання
+                }, 200);
             }
         });
     });

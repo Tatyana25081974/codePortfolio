@@ -153,6 +153,19 @@ body {
     transform: rotate(180deg);
 }
 
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    /* Початково прозорий */
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.faq-item.active .faq-answer {
+    opacity: 1;
+    /* Повністю видимий */
+}
+
 /* ======== Адаптивність ======== */
 
 /* 📌 MOBILE (320px-374px) */
