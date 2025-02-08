@@ -1,0 +1,203 @@
+/* ======== Загальні стилі ======== */
+body {
+    font-family:"Inter Tight",
+        sans-serif;;
+    background: #0F0F0F;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======== FAQ-секція ======== */
+.faq-section {
+    background-color: #0F0F0F;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    width: 90%;
+    min-width: 320px;
+    max-width: 375px;
+}
+
+/* ======== Заголовок ======== */
+.faq-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: rgba(250, 250, 250, 0.4);
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+/* ======== Список ======== */
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0px;
+}
+
+
+/* 📌 Кожен пункт FAQ */
+.faq-item {
+    background: #1A1A1A;
+    
+    padding: 16px 0px;
+    /* Внутрішні відступи по 16px */
+    transition: background 0.3s ease;
+    width: 100%;
+    border-radius: 10px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    /* Вирівнюємо дочірні елементи вертикально */
+    gap: 16px;
+    /* Відстань між .faq-question і .faq-answer */
+}
+
+.faq-item:hover {
+    background: #222;
+}
+
+/* ======== Кнопка FAQ ======== */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+        /* Вирівнює елементи по верхньому краю */
+    background: transparent;
+    border: none;
+    width: 100%;
+    
+   
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #fafafa;
+    position: relative;
+        /* Щоб іконку можна було позиціонувати */
+}
+.faq-text {
+    width: calc(100% - 113px);
+    /* Віднімаємо 113px */
+    font-size: 20px;
+    font-weight: 600;
+    color: #FAFAFA;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+.faq-icon {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Притискаємо в правий верхній кут */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 100px;
+    padding: 7px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* 📌 SVG всередині іконки */
+.faq-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1);
+        /* Робить SVG повністю білим */
+    transition: transform 0.3s ease;
+}
+
+/* 📌 Перевертання іконки при відкритті */
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* 📌 Текст відповіді */ .faq-answer {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: rgba(250, 250, 250, 0.6);
+    width: 100%;
+    /* Розтягуємо на всю ширину */
+    display: none;
+    text-align: left;
+    /* Текст вирівняний вліво */
+    margin: 0;
+    /* Видаляємо зайві відступи */
+    padding: 0;
+    /* Видаляємо всі внутрішні падінги */
+}
+
+/* ======== Відкриття FAQ ======== */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .icon {
+    transform: rotate(180deg);
+}
+
+/* ======== Адаптивність ======== */
+
+/* 📌 MOBILE (320px-374px) */
+@media (max-width: 374px) {
+    .faq-container {
+        width: 100%;
+        padding: 0 16px;
+    }
+}
+
+/* 📌 TABLET (768px+) */
+@media (min-width: 768px) {
+    .faq-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .faq-item {
+        width: calc(50% - 10px);
+    }
+}
+
+/* 📌 DESKTOP (1440px+) */
+@media (min-width: 1440px) {
+    .faq-container {
+        max-width: 1200px;
+    }
+}
+/* ============================================= */
+/* 📱 Гумова верстка Mobile (320px - 374px) */
+/* ============================================= */
+@media (max-width: 374px) {
+    .faq-container {
+        width: 95%;
+        padding: 0 10px;
+    }
+}
+
+/* ============================================= */
+/* 📱 Адаптивна Mobile (375px +) */
+/* ============================================= */
+@media (min-width: 375px) {
+    .faq-container {
+        width: 100%;
+        max-width: 375px;
+        margin: 0 auto;
+    }
+}
