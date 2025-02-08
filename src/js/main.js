@@ -1,4 +1,3 @@
-
 import './menu.js'; // Мобільне меню
 import './modal.js'; // Модальне вікно
 import './form.js'; // Валідація форми
