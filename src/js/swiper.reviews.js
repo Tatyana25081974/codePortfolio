@@ -1,13 +1,11 @@
-
 import Swiper from 'swiper';
 import 'swiper/css';
 
 document.addEventListener('DOMContentLoaded', function () {
   const reviewsList = document.getElementById('reviews-list');
 
-
   function renderReviews(reviews) {
-    reviewsList.innerHTML = '';
+    reviewsList.innerHTML = ''; 
   
     const customReviews = [
       { avatar: 'img/content/Reviews/my-photo1.jpg', author: 'Natalia', review: 'Work with was extraordinary! He turned out to be a very competent and responsible specialist. The projects were completed on time and the result exceeded my expectations' },
@@ -29,30 +27,27 @@ document.addEventListener('DOMContentLoaded', function () {
       reviewsList.appendChild(reviewItem);
     });
   
+   
     requestAnimationFrame(equalizeReviewHeights);
   }
-  
 
- 
   function equalizeReviewHeights() {
     const reviewItems = document.querySelectorAll('.reviews-list-item');
     let maxHeight = 0;
 
-   
     reviewItems.forEach(item => {
       item.style.height = 'auto'; 
-      maxHeight = Math.max(maxHeight, item.offsetHeight); 
+      maxHeight = Math.max(maxHeight, item.offsetHeight);
     });
 
-   
     reviewItems.forEach(item => {
       item.style.height = `${maxHeight}px`;
     });
   }
 
+
   async function fetchReviews() {
     try {
-     
       const response = await fetch(
         'https://portfolio-js.b.goit.study/api/reviews'
       );
@@ -61,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       const data = await response.json();
       if (data && Array.isArray(data) && data.length > 0) {
-        renderReviews(data); 
+        renderReviews(data); // Рендеримо відгуки
       } else {
         reviewsList.innerHTML = '<li style="color: red;">Not found</li>';
       }
@@ -72,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+
   function initSwiperReviews() {
     const swiperReviews = new Swiper('.swiper-reviews', {
       speed: 400,
@@ -80,21 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
       navigation: {
         nextEl: '.swiper-button-next-reviews',
         prevEl: '.swiper-button-prev-reviews',
-        disabledClass: 'swiper-button-disabled-reviews',
       },
       breakpoints: {
         768: {
           slidesPerView: 2,
-          speed: 400,
           spaceBetween: 16,
         },
         1440: {
           slidesPerView: 4,
-          speed: 400,
           spaceBetween: 16,
         },
       },
     });
+
 
     swiperReviews.on('slideChange', function () {
       const prevButtonReviews = swiperReviews.navigation.prevEl;
@@ -108,5 +102,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetchReviews().then(() => {
     initSwiperReviews();
+
+
+    setTimeout(() => {
+      document.querySelector('.swiper-reviews').swiper.update();
+    }, 100);
   });
 });
