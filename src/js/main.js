@@ -1,9 +1,10 @@
-import './menu.js';       // Мобільне меню
-import './modal.js';      // Модальне вікно
-import './form.js';       // Валідація форми
-import './accordion.js';  // Аккордеон для FAQ та About Me
-import './slider.js'; 
-import './swiper.reviews.js'   
+import './menu.js'; // Мобільне меню
+import './modal.js'; // Модальне вікно
+import './form.js'; // Валідація форми
+import './accordion.js'; // Аккордеон для FAQ та About Me
+import './slider.js';
+import './swiper.reviews.js';
+import './cover.js';
 
 import { fetchProjects, fetchReviews, submitForm } from './api.js'; // API-запити
 
@@ -18,7 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const projects = await fetchProjects();
     if (!projects || projects.length === 0) {
       console.warn('⚠️ Немає доступних проєктів!');
-      if (projectsContainer) projectsContainer.innerHTML = '<p>❌ Немає доступних проєктів.</p>';
+      if (projectsContainer)
+        projectsContainer.innerHTML = '<p>❌ Немає доступних проєктів.</p>';
     } else {
       console.log('Projects:', projects);
     }
@@ -26,14 +28,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const reviews = await fetchReviews();
     if (!reviews || reviews.length === 0) {
       console.warn('⚠️ Немає відгуків!');
-      if (reviewsContainer) reviewsContainer.innerHTML = '<p>❌ Відгуки недоступні.</p>';
+      if (reviewsContainer)
+        reviewsContainer.innerHTML = '<p>❌ Відгуки недоступні.</p>';
     } else {
       console.log('Reviews:', reviews);
     }
   } catch (error) {
     console.error('❌ Помилка отримання даних з API:', error);
-    if (projectsContainer) projectsContainer.innerHTML = `<p>❌ Не вдалося отримати проєкти: ${error.message || 'сервер недоступний'}</p>`;
-    if (reviewsContainer) reviewsContainer.innerHTML = `<p>❌ Не вдалося отримати відгуки: ${error.message || 'сервер недоступний'}</p>`;
+    if (projectsContainer)
+      projectsContainer.innerHTML = `<p>❌ Не вдалося отримати проєкти: ${
+        error.message || 'сервер недоступний'
+      }</p>`;
+    if (reviewsContainer)
+      reviewsContainer.innerHTML = `<p>❌ Не вдалося отримати відгуки: ${
+        error.message || 'сервер недоступний'
+      }</p>`;
   }
 });
 
@@ -45,7 +54,7 @@ const contactForm = document.querySelector('#contact-form');
 if (!contactForm) {
   console.warn('⚠️ Форма #contact-form не знайдена на сторінці.');
 } else {
-  contactForm.addEventListener('submit', async (event) => {
+  contactForm.addEventListener('submit', async event => {
     event.preventDefault();
 
     const formData = {
@@ -73,11 +82,9 @@ if (!contactForm) {
 
 // Функції для повідомлень
 function showSuccessMessage(message) {
-  alert(message); 
+  alert(message);
 }
 
 function showErrorMessage(message) {
-  alert(message); 
+  alert(message);
 }
-
-
