@@ -285,12 +285,17 @@ body {
         border-radius: 50%;
         flex-shrink: 0;
         transition: transform 0.3s ease;
+        background-image: url('icon-up.svg');
+            /* Початкова іконка */
+            background-size: contain;
+            background-repeat: no-repeat;
     }
 
     /* Перевертання іконки при відкритті */
-    .faq-item.active .faq-icon {
-        transform: rotate(180deg);
-    }
+        .faq-item.active .faq-icon {
+        background-image: url('icon-down.svg');
+            /* Іконка при відкритті */
+                }
 
     .faq-answer {
         font-size: 16px;
@@ -313,30 +318,37 @@ body {
 @media (min-width: 1440px) {
     .faq-container {
         max-width: 1440px;
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 32px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 0 32px;
+            
     }
 
     .faq-list {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        /* Два елементи в ряд */
-       
+        display: flex;
+        flex-wrap: wrap;
+        
+        align-items: flex-start;
+            /* Вирівнювання зверху */
+            padding: 0;
+            /* Видалити зайві відступи */
     }
 
-    .faq-item {
-        width: calc(50% - 16px);
-        /* Виправлено, тепер тільки для 1440px+ */
-        background: #1A1A1A;
-        border-radius: 12px;
-        transition: background 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-    }
+        .faq-item {
+            width: calc(50% - 8px);
+                /* Два елементи в ряд */
+           
+            max-width: calc(50% - 8px);
+            /* Фіксує розмір */
+            background: #1A1A1A;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
 }
