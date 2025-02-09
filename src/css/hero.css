@@ -58,9 +58,9 @@
         justify-content: flex-end;
         flex-direction: row;
         gap: 8px;
-        width: 342px;
+        width: 288px;
             /* Фіксована ширина */
-            height: 37px;
+            height: 30px;
             /* Фіксована висота */
             position: relative;
             /* Відносно контейнера */
