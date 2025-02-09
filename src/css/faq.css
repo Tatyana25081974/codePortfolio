@@ -156,6 +156,11 @@
 
 /* ======== ПЛАНШЕТНА ВЕРСІЯ ======== */
 @media (min-width: 768px) {
+  .faq-section {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
   .faq-container {
     max-width: 704px;
     height: auto;
