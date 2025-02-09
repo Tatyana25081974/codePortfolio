@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contact-form');
   form.addEventListener('submit', async function (event) {
@@ -18,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     try {
       const response = await fetch(
-        'https://portfolio-js.b.goit.study/api-docs/#/Requests/post_requests',
+        'https://portfolio-js.b.goit.study/api/requests',
         {
           method: 'POST',
           headers: {
@@ -39,6 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
       errorMessage.style.display = 'none';
     } catch (error) {
       console.error('Помилка:', error);
+
+      iziToast.show({
+        messageColor: '#fff',
+        color: '#EF4040',
+        position: 'topRight',
+        timeout: 7000,
+        message: 'An error occurred. Please check your input and try again.',
+      });
+
       errorMessage.style.display = 'block';
       successMessage.style.display = 'none';
     }
