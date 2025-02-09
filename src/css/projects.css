@@ -1,0 +1,232 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.projects {
+  background-color: #1c1d20;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 375px;
+  margin: auto;
+}
+
+.projects-tittle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 343px;
+}
+
+.projects-swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projects-swiper-slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-text-container {
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  background-color: #fafafa;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  width: 100%;
+  max-width: 343px;
+}
+
+.project-text-tag-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 96px;
+}
+
+.project-text-tag {
+  padding: 13px 18px;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid rgba(28, 29, 32, 0.2);
+  border-radius: 60px;
+
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #1c1d20;
+}
+
+.project-text {
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  color: #1c1d20;
+  margin-bottom: 32px;
+}
+
+.project-see-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  padding: 13px 32px;
+  color: #fafafa;
+  max-width: 141px;
+  background-color: #ed3b44;
+}
+
+.project-see-btn:hover {
+  background-color: #e0373f;
+}
+
+.project-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242527;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  width: 100%;
+  max-width: 343px;
+  padding: 100px 16px;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 311px;
+}
+
+.project-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 32px;
+  gap: 12px;
+}
+
+.project-next-btn,
+.project-prev-btn {
+  background: none;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 60px;
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.project-next-icon {
+  stroke: #fafafa;
+  pointer-events: none;
+}
+
+.project-prev-icon {
+  stroke: #fafafa;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  .projects-container {
+    max-width: 768px;
+  }
+
+  .project-text-container {
+    max-width: 704px;
+    padding: 64px;
+  }
+
+  .project-text-tag-list {
+    margin-bottom: 164px;
+  }
+
+  .project-text-tag {
+    padding: 18px;
+    white-space: nowrap;
+    text-align: center;
+    border: 1px solid rgba(28, 29, 32, 0.2);
+    border-radius: 60px;
+  }
+
+  .project-text {
+    max-width: 495px;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #1c1d20;
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+
+  .project-see-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    padding: 18px 50px;
+    max-width: 178px;
+    color: #fafafa;
+    background-color: #ed3b44;
+  }
+
+  .project-image-container {
+    max-width: 704px;
+    padding: 120px 45px;
+  }
+
+  .project-image {
+    width: 100%;
+    max-width: 614px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .projects-container {
+    max-width: 1440px;
+    padding: 32px;
+  }
+
+  .projects-swiper-slide{
+    flex-direction: row;
+  }
+
+  .project-text-container {
+    max-width: 688px;
+    padding: 64px;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 0px;
+  }
+
+  .project-text-tag-list {
+    margin-bottom: 223px;
+  }
+
+  .project-image-container {
+    max-width: 689px;
+    padding: 120px 37px;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 0px;
+  }
+}
