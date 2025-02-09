@@ -1,0 +1,279 @@
+.about-picture {
+  display: block;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.section-about-container {
+  min-width: 320px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .section-about-container {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 1439px;
+    margin-top: 64px;
+    margin-bottom: 96px;
+  }
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .section-about-container {
+    max-width: 1440px;
+    margin-top: 96px;
+    margin-bottom: 155px;
+  }
+}
+/* Перша частина */
+
+.about-first {
+  background-color: #242527;
+  padding-top: 32px;
+  padding-bottom: 272px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  border-radius: 24px;
+  width: 343px;
+  height: 500px;
+}
+.about-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+.about-text-change-first {
+  color: #ed3b44;
+}
+.about-text-change-second {
+  color: rgba(250, 250, 250, 0.4);
+}
+.about-picture-first {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  justify-content: center;
+  max-width: 375px;
+  display: block;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .about-first {
+    padding-top: 64px;
+    padding-bottom: 436px;
+    padding-left: 64px;
+    padding-right: 64px;
+    margin-bottom: 16px;
+    justify-content: center;
+    border-radius: 24px;
+    width: 704px;
+    height: 700px;
+  }
+  .about-title {
+    font-size: 38px;
+    line-height: 1.05263;
+  }
+  .about-picture-first {
+    width: 100%;
+    max-width: 704px;
+    height: auto;
+  }
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .about-first-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    gap: 16px;
+  }
+  .about-first {
+    width: 680px;
+    height: 700px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .about-picture-first {
+    width: 680px;
+    height: auto;
+    overflow: hidden;
+  }
+}
+
+/* 2 частина accordion  */
+
+/* Контейнер */
+.accordion-about-container {
+  background-color: #000;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 343px;
+  list-style: none;
+}
+
+/* Акордеон */
+.accordion-list {
+  list-style: none;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.accordion-about {
+  list-style: none;
+  padding: 0;
+  margin-top: 0px;
+  border-radius: 5px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.accordion-item-about {
+  border-bottom: 1px solid #000;
+  list-style: none;
+}
+
+.accordion-header-about {
+  list-style: none;
+  margin-bottom: 12px;
+  padding: 0px;
+  background-color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.accordion-header-about:hover {
+  background-color: #000;
+}
+
+.accordion-content-about {
+  list-style: none;
+  padding: 0px;
+  display: none;
+  background-color: #000;
+}
+
+.accordion-content-about ul {
+  list-style: none;
+  list-style-type: disc;
+  padding-left: 0px;
+}
+
+.accordion-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+.ac-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+}
+
+/* Показувати перший елемент за замовчуванням */
+.accordion-item-about.active-about .accordion-content-about {
+  display: block;
+}
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .accordion-about-container {
+    width: 704px;
+  }
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .accordion-about-container {
+    width: 1440px;
+  }
+  .accordion-list {
+    padding-left: 696px;
+    padding-right: 66px;
+  }
+}
+
+/* 3 частина swiper */
+.swiper-about-container {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-wrapper {
+  display: flex;
+  gap: 0px;
+  padding: 0;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: white;
+  border: 2px solid white;
+  transition: background-color 0.3s;
+}
+
+.circle.swiper-slide-active {
+  background-color: #e74c3c;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 200px !important;
+  height: 200px !important;
+  flex-shrink: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
