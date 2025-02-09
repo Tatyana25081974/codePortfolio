@@ -4,4 +4,4 @@ It can be › `+p);return}a||window.innerWidth<=g?u.position=="bottomLeft"||u.po
         rotateZ(${p.rotate?o?-L:L:0}deg)
         scale(${I})
       `;if(p.slideShadows){let P=l.querySelector(".swiper-slide-shadow");P||(P=fe("cards",l)),P&&(P.style.opacity=Math.min(Math.max((Math.abs(y)-.5)/.5,0),1))}l.style.zIndex=-Math.abs(Math.round(n))+c.length;const T=xe(p,l);T.style.transform=E}},setTransition:c=>{const d=e.slides.map(o=>ce(o));d.forEach(o=>{o.style.transitionDuration=`${c}ms`,o.querySelectorAll(".swiper-slide-shadow").forEach(p=>{p.style.transitionDuration=`${c}ms`})}),Oe({swiper:e,duration:c,transformElements:d})},perspective:()=>!0,overwriteParams:()=>({_loopSwapReset:!1,watchSlidesProgress:!0,loopAdditionalSlides:3,centeredSlides:!0,virtualTranslate:!e.params.cssMode})})}const ss=[Ii,zi,Ai,Oi,Di,$i,ki,Hi,Bi,Ni,Gi,Ri,Xi,Yi,Fi,Vi,Ki,Zi,Qi,Ji,es,ts,is];Z.use(ss);export{Z as S,rs as i};
-//# sourceMappingURL=vendor-DlUuYLMc.js.map
+//# sourceMappingURL=vendor-BJggjIYm.js.map
