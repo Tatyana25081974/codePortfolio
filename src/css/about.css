@@ -1,3 +1,6 @@
+.section-about-class {
+  background-color: #1c1d20;
+}
 .about-picture {
   display: block;
   border-radius: 24px;
@@ -24,6 +27,7 @@
   margin-bottom: 64px;
   padding-left: 16px;
   padding-right: 16px;
+  background-color: #1c1d20;
 }
 
 /* Styles for Tablet devices */
@@ -135,7 +139,7 @@
 
 /* Контейнер */
 .accordion-about-container {
-  background-color: #000;
+  background-color: #1c1d20;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -148,6 +152,8 @@
   list-style: none;
   margin-top: 12px;
   margin-bottom: 32px;
+  /* border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  padding-bottom: 10px; */
 }
 
 .accordion-about {
@@ -155,34 +161,39 @@
   padding: 0;
   margin-top: 0px;
   border-radius: 5px;
-  background-color: #000;
+  background-color: #1c1d20;
   overflow: hidden;
 }
 
 .accordion-item-about {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  padding-bottom: 10px;
   list-style: none;
 }
 
 .accordion-header-about {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   list-style: none;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   padding: 0px;
-  background-color: #000;
+  background-color: #1c1d20;
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s;
 }
 
 .accordion-header-about:hover {
-  background-color: #000;
+  background-color: #1c1d20;
 }
 
 .accordion-content-about {
   list-style: none;
   padding: 0px;
   display: none;
-  background-color: #000;
+  background-color: #1c1d20;
 }
 
 .accordion-content-about ul {
@@ -207,54 +218,100 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: rgba(250, 250, 250, 0.4);
+  margin-right: 200px;
 }
 
-/* Показувати перший елемент за замовчуванням */
 .accordion-item-about.active-about .accordion-content-about {
   display: block;
 }
-/* Styles for Tablet devices */
+/* стрелка */
+
+.accordion-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100px;
+  padding: 7px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}
+.icon-wrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.accordion-item-about.active-about .accordion-icon {
+  transform: rotate(0deg);
+}
+
 @media only screen and (min-width: 768px) {
   .accordion-about-container {
     width: 704px;
   }
+  .ac-title {
+    width: 250px;
+    height: 24px;
+    margin-right: 400px;
+  }
+  .accordion-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
-/* Styles for Desktop devices */
+
 @media only screen and (min-width: 1440px) {
   .accordion-about-container {
-    width: 1440px;
+    width: 1376px;
   }
   .accordion-list {
     padding-left: 696px;
     padding-right: 66px;
+    width: 1376px;
   }
 }
 
 /* 3 частина swiper */
 .swiper-about-container {
-  background-color: #000;
+  background-color: #1c1d20;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 343px;
+}
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
 }
 
 .swiper-wrapper {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0px;
   padding: 0;
+  margin-left: 0px;
+  width: auto;
 }
 
 .circle {
-  width: 200px;
-  height: 200px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   font-family: Arial, sans-serif;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
   transition: background-color 0.3s;
 }
 
@@ -266,14 +323,77 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
-  width: 200px !important;
-  height: 200px !important;
-  flex-shrink: 0;
+  width: 130px !important;
+  height: 130px !important;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+.swiper-button-next {
+  color: #1c1d20;
+  background-color: #1c1d20;
+  margin-left: 55px;
+}
+
+.swiper-icon {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  color: #3b3b3b;
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+}
+.swiper-icon-span {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  color: #3b3b3b;
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  .swiper-about-container {
+    width: 704px;
+  }
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: white;
+    border: 2px solid white;
+    transition: background-color 0.3s;
+  }
+  .swiper-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .swiper-about-container {
+    background-color: #1c1d20;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 32px;
+    margin-left: 0;
+    padding-left: 32px;
+    width: 1376px;
+  }
 }
