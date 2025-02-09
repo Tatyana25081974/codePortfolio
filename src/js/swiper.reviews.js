@@ -1,3 +1,8 @@
+import Swiper from 'swiper';
+import '../css/reviews.css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchReviews();
 });
@@ -10,19 +15,10 @@ async function fetchReviews() {
     }
 
     const data = await response.json();
-    console.log('Reviews Data:', data); // Лог для перевірки
+    console.log('Reviews Data:', data);
 
     renderReviews(data);
-    
-    // Переконайся, що Swiper оновлюється після рендерингу
-    setTimeout(() => {
-      const swiperInstance = document.querySelector('.swiper-reviews')?.swiper;
-      if (swiperInstance) {
-        swiperInstance.update();
-      } else {
-        console.warn('Swiper instance not found!');
-      }
-    }, 100);
+    initSwiperReviews();
   } catch (error) {
     console.error('Error fetching reviews:', error);
   }
@@ -36,7 +32,7 @@ function renderReviews(reviews) {
     return;
   }
 
-  // Очищуємо список перед додаванням нових відгуків
+
   reviewsList.innerHTML = '';
 
   reviews.forEach(({ avatar_url, author, review }) => {
@@ -53,19 +49,15 @@ function renderReviews(reviews) {
 
     reviewsList.appendChild(reviewItem);
   });
-
-  // Показати відгуки (якщо вони були приховані)
-  document.querySelector('.reviews-list-wrapper').style.opacity = '1';
 }
 
-// Ініціалізація Swiper
 function initSwiperReviews() {
   new Swiper('.swiper-reviews', {
     slidesPerView: 1,
     spaceBetween: 20,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',я
+      nextEl: '.swiper-button-next-reviews',
+      prevEl: '.swiper-button-prev-reviews',
     },
     pagination: {
       el: '.swiper-pagination',
@@ -77,8 +69,6 @@ function initSwiperReviews() {
     },
   });
 }
-
-// Викликаємо ініціалізацію Swiper після завантаження сторінки
 document.addEventListener('DOMContentLoaded', () => {
   initSwiperReviews();
 });
