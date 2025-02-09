@@ -1,111 +1,84 @@
-import Swiper from 'swiper';
-import 'swiper/css';
+document.addEventListener('DOMContentLoaded', () => {
+  fetchReviews();
+});
 
-document.addEventListener('DOMContentLoaded', function () {
-  const reviewsList = document.getElementById('reviews-list');
-
-  function renderReviews(reviews) {
-    reviewsList.innerHTML = ''; 
-  
-    const customReviews = [
-      { avatar: 'img/content/Reviews/my-photo1.jpg', author: 'Natalia', review: 'Work with was extraordinary! He turned out to be a very competent and responsible specialist. The projects were completed on time and the result exceeded my expectations' },
-      { avatar: 'img/content/Reviews/my-photo2.jpg', author: 'Dmytro', review: 'I have the honor to recommend him as an exceptional professional in his field. His knowledge and expertise are undeniable. Cooperation with him always brings impressive results.' },
-      { avatar: 'img/content/Reviews/my-photo3.jpg', author: 'Anna', review: 'The developed project impresses with its quality and efficiency. The code is cleanly written and the functionality exceeds expectations. Extremely satisfied with the cooperation!' },
-      { avatar: 'img/content/Reviews/my-photo4.jpg', author: 'Ivetta', review: 'Thanks for the excellent work on the project! His talent and professionalism deserve recognition. I recommend it to everyone who is looking for an expert in the field of software development.' }
-    ];
-  
-    customReviews.forEach(customReview => {
-      const reviewItem = document.createElement('li');
-      reviewItem.classList.add('swiper-slide', 'reviews-list-item');
-  
-      reviewItem.innerHTML = `
-        <img class="review-image" src="${customReview.avatar}" alt="${customReview.author}" width="48" height="48">
-        <h3 class="reviews-names">${customReview.author}</h3>
-        <p class="reviews-text">${customReview.review}</p>
-      `;
-  
-      reviewsList.appendChild(reviewItem);
-    });
-  
-   
-    requestAnimationFrame(equalizeReviewHeights);
-  }
-
-  function equalizeReviewHeights() {
-    const reviewItems = document.querySelectorAll('.reviews-list-item');
-    let maxHeight = 0;
-
-    reviewItems.forEach(item => {
-      item.style.height = 'auto'; 
-      maxHeight = Math.max(maxHeight, item.offsetHeight);
-    });
-
-    reviewItems.forEach(item => {
-      item.style.height = `${maxHeight}px`;
-    });
-  }
-
-
-  async function fetchReviews() {
-    try {
-      const response = await fetch(
-        'https://portfolio-js.b.goit.study/api/reviews'
-      );
-      if (!response.ok) {
-        throw new Error('Failed to fetch reviews');
-      }
-      const data = await response.json();
-      if (data && Array.isArray(data) && data.length > 0) {
-        renderReviews(data); // Рендеримо відгуки
-      } else {
-        reviewsList.innerHTML = '<li style="color: red;">Not found</li>';
-      }
-    } catch (error) {
-      reviewsList.innerHTML = '<li style="color: red;">Not found</li>';
-      alert('reviews not found');
-      console.error('Reviews error:', error);
+async function fetchReviews() {
+  try {
+    const response = await fetch('https://portfolio-js.b.goit.study/api/reviews');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-  }
 
+    const data = await response.json();
+    console.log('Reviews Data:', data); // Лог для перевірки
 
-  function initSwiperReviews() {
-    const swiperReviews = new Swiper('.swiper-reviews', {
-      speed: 400,
-      spaceBetween: 16,
-      slidesPerView: 1,
-      navigation: {
-        nextEl: '.swiper-button-next-reviews',
-        prevEl: '.swiper-button-prev-reviews',
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 16,
-        },
-        1440: {
-          slidesPerView: 4,
-          spaceBetween: 16,
-        },
-      },
-    });
-
-
-    swiperReviews.on('slideChange', function () {
-      const prevButtonReviews = swiperReviews.navigation.prevEl;
-      const nextButtonReviews = swiperReviews.navigation.nextEl;
-
-
-      prevButtonReviews.disabled = swiperReviews.isBeginning;
-      nextButtonReviews.disabled = swiperReviews.isEnd;
-    });
-  }
-
-  fetchReviews().then(() => {
-    initSwiperReviews();
-
-
+    renderReviews(data);
+    
+    // Переконайся, що Swiper оновлюється після рендерингу
     setTimeout(() => {
-      document.querySelector('.swiper-reviews').swiper.update();
+      const swiperInstance = document.querySelector('.swiper-reviews')?.swiper;
+      if (swiperInstance) {
+        swiperInstance.update();
+      } else {
+        console.warn('Swiper instance not found!');
+      }
     }, 100);
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+  }
+}
+
+function renderReviews(reviews) {
+  const reviewsList = document.getElementById('reviews-list');
+  
+  if (!reviewsList) {
+    console.error('reviewsList не знайдено в DOM');
+    return;
+  }
+
+  // Очищуємо список перед додаванням нових відгуків
+  reviewsList.innerHTML = '';
+
+  reviews.forEach(({ avatar_url, author, review }) => {
+    const reviewItem = document.createElement('li');
+    reviewItem.classList.add('swiper-slide');
+
+    reviewItem.innerHTML = `
+      <div class="review-card">
+        <img src="${avatar_url}" alt="${author}" class="review-avatar">
+        <h3 class="review-author">${author}</h3>
+        <p class="review-text">${review}</p>
+      </div>
+    `;
+
+    reviewsList.appendChild(reviewItem);
   });
+
+  // Показати відгуки (якщо вони були приховані)
+  document.querySelector('.reviews-list-wrapper').style.opacity = '1';
+}
+
+// Ініціалізація Swiper
+function initSwiperReviews() {
+  new Swiper('.swiper-reviews', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',я
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+}
+
+// Викликаємо ініціалізацію Swiper після завантаження сторінки
+document.addEventListener('DOMContentLoaded', () => {
+  initSwiperReviews();
 });
