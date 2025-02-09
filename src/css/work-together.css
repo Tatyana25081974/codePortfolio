@@ -139,6 +139,7 @@ work-together-input::placeholder {
   font-size: 16px;
   letter-spacing: -0.02em;
   color: #fafafa;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .work-together-button:hover,
@@ -167,6 +168,7 @@ work-together-input::placeholder {
   font-size: 14px;
   letter-spacing: -0.02em;
   color: #fafafa;
+  transition: border-color 0.2s ease-in-out;
 }
 
 .contacts:hover,
