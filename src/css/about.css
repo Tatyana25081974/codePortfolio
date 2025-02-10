@@ -19,12 +19,10 @@
   white-space: nowrap;
 }
 .section-about-container {
-  min-width: 320px;
-  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  padding-top: 64px;
+  padding-bottom: 64px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: #1c1d20;
@@ -35,17 +33,16 @@
   .section-about-container {
     padding-left: 32px;
     padding-right: 32px;
-    max-width: 1439px;
-    margin-top: 64px;
-    margin-bottom: 96px;
+
+    padding-top: 64px;
+    padding-top: 96px;
   }
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
   .section-about-container {
-    max-width: 1440px;
-    margin-top: 96px;
-    margin-bottom: 155px;
+    padding-top: 96px;
+    padding-bottom: 155px;
   }
 }
 /* Перша частина */
@@ -61,8 +58,6 @@
   margin-right: auto;
   justify-content: center;
   border-radius: 24px;
-  width: 343px;
-  height: 500px;
 }
 .about-title {
   font-family: 'Inter Tight', sans-serif;
@@ -127,6 +122,7 @@
     height: 700px;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 0px;
   }
   .about-picture-first {
     width: 680px;
@@ -143,8 +139,8 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  width: 343px;
   list-style: none;
+  padding-bottom: 32px;
 }
 
 /* Акордеон */
@@ -177,7 +173,7 @@
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  margin-bottom: 20px;
+
   padding: 0px;
   background-color: #1c1d20;
   cursor: pointer;
@@ -229,6 +225,7 @@
 .accordion-icon {
   width: 36px;
   height: 36px;
+  stroke-width: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -250,7 +247,7 @@
 
 @media only screen and (min-width: 768px) {
   .accordion-about-container {
-    width: 704px;
+    padding-bottom: 64px;
   }
   .ac-title {
     width: 250px;
@@ -265,7 +262,7 @@
 
 @media only screen and (min-width: 1440px) {
   .accordion-about-container {
-    width: 1376px;
+    padding-bottom: 96px;
   }
   .accordion-list {
     padding-left: 696px;
@@ -278,20 +275,17 @@
 .swiper-about-container {
   background-color: #1c1d20;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 343px;
+
+  align-items: center;
 }
-.swiper {
+.swiper-about {
+  display: flex;
   width: 100%;
   overflow: hidden;
   justify-content: space-between;
 }
 
-.swiper-wrapper {
+.swiper-wrapper-about {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -319,7 +313,7 @@
   background-color: #e74c3c;
 }
 
-.swiper-slide {
+.swiper-slide-about {
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -327,42 +321,24 @@
   height: 130px !important;
 }
 
-.swiper-button-next {
+.swiper-button-next-about {
   color: #1c1d20;
   background-color: #1c1d20;
-  margin-left: 55px;
 }
 
-.swiper-icon {
-  position: absolute;
+.swiper-icon-about {
+  position: static;
   width: 28px;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7px;
-  color: #3b3b3b;
-  cursor: pointer;
-  margin-left: auto;
-  display: flex;
-}
-.swiper-icon-span {
-  position: absolute;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px;
   color: #3b3b3b;
   cursor: pointer;
   margin-left: auto;
   display: flex;
 }
 @media only screen and (min-width: 768px) {
-  .swiper-about-container {
-    width: 704px;
-  }
   .circle {
     width: 200px;
     height: 200px;
@@ -376,7 +352,7 @@
     border: 2px solid white;
     transition: background-color 0.3s;
   }
-  .swiper-slide {
+  .swiper-slide-about {
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -389,11 +365,11 @@
   .swiper-about-container {
     background-color: #1c1d20;
     display: flex;
+    gap: 72px;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 32px;
-    margin-left: 0;
     padding-left: 32px;
-    width: 1376px;
+    padding-left: 32px;
+    width: 100%;
   }
 }
