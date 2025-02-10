@@ -1,21 +1,12 @@
-/* ====== 📱 Гумова мобільна версія (320px - 374px) ====== */
-@media screen and (max-width: 374px) {
+
+
     .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        text-align: left;
-        width: 100%;
-        min-height: 100vh;
-        padding: 16px;
-        position: relative;
-        background-image: url("../img/bg/heromobail-bg.png");
+       background-image: url("../img/bg/heromobail-bg.png");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
-        background-color: #000;
+        background-color: #242527;;
         box-sizing: border-box;
+        padding: 32px ;
     }
         .hero-container {
             position: relative;
