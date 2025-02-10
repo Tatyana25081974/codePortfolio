@@ -3,8 +3,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contact-form');
+  const modal = document.querySelector('.work-together-modal');
+  const closeButton = document.querySelector('.work-together-modal-close-icon');
+
   form.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Відміна стандартної відправки форми
+    event.preventDefault();
 
     const emailInput = form.querySelector('.work-together-form-email');
     const commentInput = form.querySelector('.work-together-form-comments');
@@ -12,12 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const successMessage = document.querySelector('.email-succes');
     const errorMessage = document.querySelector('.email-invalid');
 
-    // Отримуємо значення з форми
     const formData = {
       email: emailInput.value.trim(),
       comment: commentInput.value.trim(),
     };
-    console.log('formData :>> ', formData);
 
     try {
       const response = await fetch(
@@ -35,9 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
         throw new Error('Помилка під час відправлення запиту');
       }
 
-      // Якщо запит успішний - відкриваємо модальне вікно
       openSuccessModal();
-      form.reset(); // Очищаємо форму
+      form.reset();
       successMessage.style.display = 'none';
       errorMessage.style.display = 'none';
     } catch (error) {
@@ -57,37 +57,37 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function openSuccessModal() {
-    // Функція для відкриття модального вікна
-    const modal = document.querySelector('.work-together-modal');
     modal.classList.add('is-open');
-  }
-});
+    document.body.classList.add('modal-open');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const modal = document.querySelector('.work-together-modal');
-  const closeButton = document.querySelector('.work-together-modal-close-icon');
+    // Додаємо слухачі тільки при відкритті
+    document.addEventListener('keydown', closeOnEscape);
+    modal.addEventListener('click', closeOnBackdropClick);
+  }
 
   function closeModal() {
-    modal.classList.remove('is-open'); // Видаляємо клас, який відкриває модальне вікно
+    modal.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+
+    // Видаляємо слухачі при закритті
+    document.removeEventListener('keydown', closeOnEscape);
+    modal.removeEventListener('click', closeOnBackdropClick);
   }
 
-  // Закриття по кнопці
-  closeButton.addEventListener('click', function (event) {
-    event.stopPropagation(); // Запобігаємо закриттю по кліку на саму іконку
-    closeModal();
-  });
-
-  // Закриття по кліку на backdrop (зону поза модальним вікном)
-  modal.addEventListener('click', function (event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Закриття при натисканні клавіші Escape
-  document.addEventListener('keydown', function (event) {
+  function closeOnEscape(event) {
     if (event.key === 'Escape') {
       closeModal();
     }
+  }
+
+  function closeOnBackdropClick(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+
+  closeButton.addEventListener('click', function (event) {
+    event.stopPropagation();
+    closeModal();
   });
 });
