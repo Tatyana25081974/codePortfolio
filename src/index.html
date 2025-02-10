@@ -21,42 +21,18 @@
 </head>
 
 <body>
-  <div id="header-container"></div>
-
+  <load src="./partials/header.html" />
   <main>
-    <!-- Динамічне завантаження секцій -->
-    <div id="hero-container"></div>
-    <div id="about-container"></div>
-    <div id="benefits-container"></div>
-    <div id="projects-container"></div>
-    <div id="faq-container"></div>
-    <div id="covers-container"></div>
-    <div id="reviews-container"></div>
+    <!-- Loads the specified .html file -->
+    <load src="./partials/hero.html" />
+    <load src="./partials/about.html" />
+    <load src="./partials/benefits.html" />
+    <load src="./partials/projects.html" />
+    <load src="./partials/faq.html" />
+    <load src="./partials/covers.html" />
+    <load src="./partials/reviews.html" />
   </main>
-
-  <div id="work-together-container"></div>
-
+  <load src="./partials/work-together.html" />
   <script type="module" src="./js/main.js"></script>
-  <script>
-    // Функція для підключення HTML-файлів через JavaScript
-    function loadHTML(id, file) {
-      fetch(file)
-        .then(response => response.text())
-        .then(data => document.getElementById(id).innerHTML = data)
-        .catch(error => console.error("Error loading file:", file, error));
-    }
-
-    // Завантаження частин сайту
-    loadHTML("header-container", "./partials/header.html");
-    loadHTML("hero-container", "./partials/hero.html");
-    loadHTML("about-container", "./partials/about.html");
-    loadHTML("benefits-container", "./partials/benefits.html");
-    loadHTML("projects-container", "./partials/projects.html");
-    loadHTML("faq-container", "./partials/faq.html");
-    loadHTML("covers-container", "./partials/covers.html");
-    loadHTML("reviews-container", "./partials/reviews.html");
-    loadHTML("work-together-container", "./partials/work-together.html");
-  </script>
 </body>
-
 </html>
