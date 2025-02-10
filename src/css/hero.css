@@ -27,7 +27,7 @@
            /* Базові відступи */
         display: flex;
         flex-direction: column;
-            justify-content: column;
+            justify-content: space-between;;
         align-items: flex-start;
 
     /* Заголовок Hero */
@@ -58,14 +58,14 @@
         justify-content: flex-end;
         flex-direction: row;
         gap: 8px;
-        /* Трохи більше простору між елементами */
-        width: calc(100% - 32px);
-        height: 40px;
-        /* Збільшена висота для кращої гармонії */
-        position: absolute;
-        inset: auto 0 0 auto;
-            /* Прив’язка до правого нижнього кута hero-container */
-    max-width: 375px;
+        width: 288px;
+            /* Фіксована ширина */
+            height: 30px;
+            /* Фіксована висота */
+            position: relative;
+            /* Відносно контейнера */
+            align-self: flex-end;
+            /* Притискаємо до правого кута */
     }
 
     /* Соцмережі */

@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>goit-js-hw-09</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
+
     <section class="projects" id="projects-s">
       <div class="container projects-container">
         <h2 class="projects-tittle">PROJECTS</h2>
-        <div class="projects-swiper">
-          <div class="projects-swiper-wrapper">
-            <div class="projects-swiper-slide">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
               <div class="project-text-container">
                 <ul class="project-text-tag-list">
                   <li class="project-text-tag">#react</li>
@@ -36,7 +28,7 @@
                 />
               </div>
             </div>
-            <div class="projects-swiper-slide">
+            <div class="swiper-slide">
               <div class="project-text-container">
                 <ul class="project-text-tag-list">
                   <li class="project-text-tag">#react</li>
@@ -60,8 +52,8 @@
                 />
               </div>
             </div>
-            <div class="projects-swiper-slide">
-              <div class="container project-text-container">
+            <div class="swiper-slide">
+              <div class="project-text-container">
                 <ul class="project-text-tag-list">
                   <li class="project-text-tag">#react</li>
                   <li class="project-text-tag">#js</li>
@@ -73,7 +65,7 @@
                 </p>
                 <a href="#" class="project-see-btn">See project</a>
               </div>
-              <div class="container project-image-container">
+              <div class="project-image-container">
                 <img
                   class="project-image"
                   srcset="
@@ -85,8 +77,8 @@
               </div>
             </div>
           </div>
-          <div class="project-button-wrapper">
-            <button id="projectPrevBtn" class="project-prev-btn">
+          <div class="button-wrapper">
+            <div class="swiper-button-prev">
               <svg
                 width="32"
                 height="32"
@@ -109,8 +101,8 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
-            <button id="projectNextBtn" class="project-next-btn">
+            </div>
+            <div class="swiper-button-next">
               <svg
                 width="32"
                 height="32"
@@ -133,12 +125,10 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <script src="./js/main.js" type="module"></script>
-  </body>
-</html>
+    

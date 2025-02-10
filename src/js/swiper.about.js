@@ -1,27 +1,28 @@
-// import Swiper from 'swiper';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  // slidesPerView: 2,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-  },
-  mousewheel: {
-    invert: false,
-  },
-  // breakpoints: {
-  //   768: {
-  //     slidesPerView: 3,
-  //   },
-  //   1440: {
-  //     slidesPerView: 6,
-  //   },
-  // },
+window.addEventListener('load', () => {
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 2,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+    mousewheel: {
+      invert: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+      1440: {
+        slidesPerView: 6,
+      },
+    },
+  });
 });

@@ -1,43 +1,30 @@
-import Swiper from 'swiper';
-import 'swiper/css';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const swiper = new Swiper('.project-swiper', {
+const prevButton = document.querySelector('.swiper-button-prev');
+const nextButton = document.querySelector('.swiper-button-next');
+
+window.addEventListener('load', () => {
+  const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
-    navigation: {
-      nextEl: '.project-next-btn',
-      prevEl: '.project-prev-btn',
+    freeMode: false,
+    loop: false,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
     },
-    direction: 'vertical',
-    loop: false, 
-    on: {
-      slideChange: function () {
-        const projectPrevButton = document.querySelector('.project-prev-btn');
-        const projectNextButton = document.querySelector('.project-next-btn');
-
-        if (this.isBeginning) {
-          projectPrevButton.disabled = true;
-          projectPrevButton.style.opacity = '0.5';
-        } else {
-          projectPrevButton.disabled = false;
-          projectPrevButton.style.opacity = '1';
-        }
-     
-        if (this.isEnd) {
-          projectNextButton.disabled = true;
-          projectNextButton.style.opacity = '0.5';
-        } else {
-          projectNextButton.disabled = false;
-          projectNextButton.style.opacity = '1';
-        }
-      },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   });
 
-  const projectPrevButton = document.querySelector('.project-prev-btn');
-  const projectNextButton = document.querySelector('.project-next-btn');
+  function updateButtonState() {
+    prevButton.disabled = swiper.activeIndex === 0;
+    nextButton.disabled = swiper.activeIndex === swiper.slides.length - 1;
+  }
 
-  projectPrevButton.disabled = true;
-  prevButton.style.opacity = '0.5';
+  swiper.on('slideChange', updateButtonState);
+  updateButtonState();
 });

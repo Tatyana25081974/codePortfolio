@@ -6,13 +6,6 @@ import './slider.js';
 import './swiper.reviews.js';
 import './cover.js';
 import './faq.js';
-
-
-
-
-
-
-
-  
-
-
+import './accordion.about.js';
+import './swiper.about.js';
+import './swiper.projects.js';
