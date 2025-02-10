@@ -54,9 +54,11 @@ a:hover {
 
 /* ====== Глобальні стилі контейнера ====== */
 
+
 .container {
   max-width: 375px;
   margin: 0 auto;
+  
   padding: 16px;
 }
 
