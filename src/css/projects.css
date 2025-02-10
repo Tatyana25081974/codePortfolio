@@ -30,14 +30,8 @@
   max-width: 343px;
 }
 
-.projects-swiper-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.projects-swiper-slide {
-  display: flex;
+.swiper-slide {
+  display: flex !important;
   flex-direction: column;
 }
 
@@ -116,17 +110,18 @@
   max-width: 311px;
 }
 
-.project-button-wrapper {
+.button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   margin-top: 32px;
-  gap: 12px;
+  height: 64px;
+
 }
 
-.project-next-btn,
-.project-prev-btn {
+.swiper-button-next,
+.swiper-button-prev {
   background: none;
   border: 1px solid rgba(250, 250, 250, 0.5);
   border-radius: 60px;
@@ -136,6 +131,23 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateX(-35px);
+}
+
+.swiper-button-next {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateX(35px);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
 }
 
 .project-next-icon {
@@ -208,7 +220,8 @@
     padding: 32px;
   }
 
-  .projects-swiper-slide{
+  .swiper-slide {
+    display: flex;
     flex-direction: row;
   }
 
