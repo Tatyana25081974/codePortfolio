@@ -1,12 +1,8 @@
 .work-together-section {
   background-image: url('../img/bg/work-together-mobail-bg.png');
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-size: 85px 100%;
-  background-position: right center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #1c1d20;
 }
 
 @media screen and (min-device-pixel-ratio: 2),
@@ -18,11 +14,10 @@
 }
 
 .work-together-container {
-  width: auto;
+  min-width: 320px;
 }
 
 .work-together-title-container {
-  padding-top: 32px;
   display: flex;
   align-items: center;
   margin-bottom: 4px;
@@ -49,8 +44,7 @@
 
 .work-together-input {
   cursor: pointer;
-  width: 343px;
-  height: 44px;
+  width: 100%;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
@@ -203,6 +197,9 @@ work-together-input::placeholder {
   opacity: 1;
   pointer-events: auto;
 }
+body.modal-open {
+  overflow: hidden;
+}
 
 .work-together-container-modal {
   border: 1px solid rgba(250, 250, 250, 0.1);
@@ -247,11 +244,24 @@ work-together-input::placeholder {
   /MODAL
   ======================================================================================================================================================== */
 
+/* ====== Mobile  ====== */
+@media screen and (min-width: 375px) {
+  .work-together-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: 85px 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+}
 /* ====== Tablet  ====== */
 @media screen and (min-width: 768px) {
   .work-together-section {
     background-image: url('../img/bg/work-together-tablet-bg.png');
     background-size: 198px 100%;
+    padding-top: 80px;
+    padding-bottom: 169px;
   }
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -266,7 +276,6 @@ work-together-input::placeholder {
     height: 70px;
   }
   .work-together-title-container {
-    padding-top: 64px;
     margin-bottom: 7px;
   }
   .work-together-logo {
@@ -309,7 +318,6 @@ work-together-input::placeholder {
   .work-together-contacts-list {
     gap: 8px;
     margin-top: 18px;
-    padding-bottom: 145px;
   }
   .contacts {
     padding: 18px 32px;
@@ -350,8 +358,9 @@ work-together-input::placeholder {
       background-image: url('../img/bg/work-together-desktop-bg@2x.png');
     }
   }
-  .work-together-title-container {
-    padding-top: 64px;
+  .work-together-container {
+    padding-left: 196px;
+    padding-right: 196px;
   }
   .work-together-button {
     margin-left: 54px;
@@ -359,8 +368,5 @@ work-together-input::placeholder {
   .work-together-input {
     width: 390px;
     height: 44px;
-  }
-  .work-together-contacts-list {
-    padding-bottom: 137px;
   }
 }
