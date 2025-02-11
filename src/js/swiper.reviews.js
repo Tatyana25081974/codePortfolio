@@ -2,22 +2,30 @@ import Swiper from 'swiper';
 import '../css/reviews.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Keyboard, Navigation, Mousewheel } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
   new Swiper('.swiper-reviews', {
     loop: true,
     slidesPerView: 1,
-    spaceBetween: 20, // Додаємо відступ між слайдами
+    modules: [Keyboard, Navigation, Mousewheel],
     navigation: {
       nextEl: '.swiper-button-next-reviews',
       prevEl: '.swiper-button-prev-reviews',
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
     },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
+    mousewheel: {
+      invert: false,
+    },
     breakpoints: {
-      576: {
+      320: {
         slidesPerView: 1, 
       },
       768: {
