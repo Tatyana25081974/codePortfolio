@@ -23,7 +23,7 @@
     padding-right: 16px;
 }
 
-/* Заголовок */
+
 .hero-title {
     margin-bottom: 212px;
     font-weight: 500;
@@ -35,7 +35,7 @@
     text-align: left;
 }
 
-/* 📌 Фіксований розмір соцмереж */
+
 .social-container {
     width: 342px;
     height: 37px;
@@ -46,7 +46,7 @@
     gap: 4px;
 }
 
-/* Соцмережі */
+
 .social-links {
     display: flex;
     flex-direction: row;
@@ -144,7 +144,7 @@
     
 }
 
-/* 📌 Соцмережі */
+
 .social-links {
     display: flex;
     flex-direction: row;
@@ -152,7 +152,7 @@
     gap: 8px;
 }
 
-/* 📌 Іконки соцмереж */
+
 .social-links a {
     display: flex;
     align-items: center;
@@ -254,4 +254,28 @@
             text-decoration: none;
             transition: all 0.3s;
         }
+}
+
+@media screen and (max-width: 767px) and (min-resolution: 192dpi),
+screen and (max-width: 767px) and (min-resolution: 2dppx),
+screen and (max-width: 767px) and (min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url("../img/bg/heromobail-bg@2x.png");
+    }
+}
+
+@media screen and (min-width: 768px) and (min-resolution: 192dpi),
+screen and (min-width: 768px) and (min-resolution: 2dppx),
+screen and (min-width: 768px) and (min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url("../img/bg/herotablet-bg@2x.png");
+    }
+}
+
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi),
+screen and (min-width: 1440px) and (min-resolution: 2dppx),
+screen and (min-width: 1440px) and (min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url("../img/bg/herodesktop-bg@2x.png");
+    }
 }
