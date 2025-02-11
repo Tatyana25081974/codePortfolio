@@ -1,506 +1,232 @@
-/* ====== 📱 Гумова мобільна версія (320px - 374px) ====== */
-@media screen and (max-width: 374px) {
+.hero {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("../img/bg/heromobail-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #242527;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 281px;
+    padding-bottom: 32px;
+}
+
+/* Фіксований контейнер починаючи з 375px */
+.hero-container {
+    width: 375px;
+    margin: 0 auto;
+    /* Центрування */
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Заголовок */
+.hero-title {
+    margin-bottom: 212px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #fafafa;
+    text-align: left;
+}
+
+/* 📌 Фіксований розмір соцмереж */
+.social-container {
+    width: 342px;
+    height: 37px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+/* Соцмережі */
+.social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 37px;
+    font-size: 12px;
+    padding: 6px 8px;
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    border-radius: 50%;
+    color: #FAFAFA;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ED3B44;
+    border-color: #ED3B44;
+}
+
+
+.email-link {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    padding: 8px 14px;
+    font-size: 12px;
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    border-radius: 50px;
+    color: #FAFAFA;
+    text-decoration: none;
+    transition: all 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email-link:hover {
+    opacity: 0.85;
+}
+
+@media only screen and (min-width: 768px) {
     .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        text-align: left;
-        width: 100%;
-        min-height: 100vh;
-        padding: 16px;
-        position: relative;
-        background-image: url("../img/bg/heromobail-bg.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-color: #000;
-        box-sizing: border-box;
-    }
-        .hero-container {
-            position: relative;
-            width: 100%;
-            max-width: 1440px;
-            min-height: 100vh;
-           margin: 0 auto;
-            padding: 0 16px;
-           /* Базові відступи */
-        display: flex;
-        flex-direction: column;
-            justify-content: space-between;;
-        align-items: flex-start;
+        padding-top: 300px;
+        padding-bottom: 32px;
+        background-image: url("../img/bg/herotablet-bg.png");
 
-    /* Заголовок Hero */
-    .hero-title {
-        font-family: "Inter Tight", sans-serif;
-        font-weight: 500;
-        font-size: 40px;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-        color: #fafafa;
-        width: calc(100% - 32px);
-        text-align: left;
-        padding: 0;
-        flex: 1;
-            /* Додаємо гнучкість для центрування */
-            display: flex;
-            align-items: center;
-            /* Центруємо по вертикалі */
     }
 
-    /* Контейнер соцмереж + пошта */
-    .social-container {
-        display: flex;
+    .hero-container {
+        width: 768px;
+        padding: 0px 32px;
+    }
+
+}
+
+
+.hero-title {
+    font-size: 90px;
+     margin-bottom: 187px;
+    margin-right: 72px;
+}
+.social-container {
+    width: 474px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    align-self: flex-end;
+  
+    margin-top: auto;
+    
+}
+
+/* 📌 Соцмережі */
+.social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 📌 Іконки соцмереж */
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    padding: 18px;
+    font-size: 10px;
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    border-radius: 50%;
+    color: #FAFAFA;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ED3B44;
+    border-color: #ED3B44;
+}
+
+
+.email-link {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    padding: 12px 18px;
+    font-size: 18px;
+    border: 1px solid rgba(250, 250, 250, 0.3);
+    border-radius: 50px;
+    color: #FAFAFA;
+    text-decoration: none;
+    transition: all 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.email-link:hover {
+    opacity: 0.85;
+}
+@media only screen and (min-width: 1440px) {
+    .hero {
+        padding-top: 300px;
+        padding-bottom: 32px;
+        background:url("../img/bg/herodesktop-bg.png") left / 50% 100% no-repeat,
+                #1C1D20 right / 50% 100% no-repeat;
+            background-color: #1C1D20;
        
-        flex-direction: row;
+    }
+
+    .hero-container {
+        width: 1440px;
+        padding-left: 178px;
+        padding-right: 32px;
+       }
+
+    .hero-title {
+        font-size: 90px;
+        text-align: left;
+        margin-right: 146px;
+        margin-bottom: 243px;
+    }
+
+    .social-container {
+        width: 474px;
+        height: 55px;
+        display: flex;
         align-items: center;
         justify-content: flex-end;
-        flex-direction: row;
         gap: 8px;
-        width: 288px;
-            /* Фіксована ширина */
-            height: 30px;
-            /* Фіксована висота */
-            position: relative;
-            /* Відносно контейнера */
-            align-self: flex-end;
-            /* Притискаємо до правого кута */
+       
     }
-
-    /* Соцмережі */
-    .social-links {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 6px;
-        /* Трохи більше відстані між іконками */
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 34px;
-        /* Трохи збільшено іконки */
-        height: 34px;
-        font-size: 12px;
-        padding: 6px 8px;
-        /* Оптимальний розмір тексту */
-        border: 1px solid rgba(250, 250, 250, 0.3);
-        border-radius: 50%;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: all 0.3s;
-    }
-
-    .social-links a:hover {
-        background-color: #ED3B44;
-        border-color: #ED3B44;
-    }
-
-    /* Пошта */
-    .email-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-grow: 1;
-        max-width: 100%;
-        height: 36px;
-        padding: 6px 10px;
-        font-size: 12px;
-        
-        border: 1px solid rgba(250, 250, 250, 0.3);
-        border-radius: 50px;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: all 0.3s;
-        white-space: nowrap;
-        padding: 8px 14px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .email-link:hover {
-        opacity: 0.85;
-    }
-}}
-/* ====== 📱 Адаптивна мобільна версія (375px - 767px) ====== */
-@media screen and (min-width: 375px) and (max-width: 767px) {
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: left;
-        padding: 16px;
-        width: 100%;
-        min-height: 100vh;
-        background-image: url("../img/bg/heromobail-bg.png");
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        box-sizing: border-box;
-    }
-        .hero-container {
-            position: relative;
-            width: 100%;
-            max-width: 1440px;
-            min-height: 100vh;
-            margin: 0 auto;
-            padding: 0 16px;
+        .social-links a {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* Вирівнює заголовок по центру, а соцмережі вниз */
-            align-items: center;
-        }
-
-    /* Заголовок Hero */
-    .hero-title {
-        font-family: "Inter Tight", sans-serif;
-        font-weight: 500;
-        font-size: 48px;
-        /* Трохи зменшено для гармонії */
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-        text-transform: uppercase;
-        color: #fafafa;
-        width: calc(100% - 32px);
-        text-align: left;
-        padding: 0;
-        flex: 1;
-            /* Рівномірний розподіл місця */
-            display: flex;
-            align-items: center;
-    }
-
-    /* Контейнер соцмереж + пошта */
-        .social-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-            /* Притискаємо до правого краю */
-            gap: 8px;
-            width: 342px;
-            /* Фіксована ширина */
-            height: 37px;
-            /* Фіксована висота */
-            position: absolute;
-            bottom: 16px;
-            right: 16px;
-            /* Притискаємо до правого краю */
-        }
-
-    /* Соцмережі */
-    .social-links {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 6px;
-        /* Додав трохи більше простору */
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 34px;
-        /* Трохи менше для балансу */
-        height: 34px;
-        padding: 8px 10px;
-        font-size: 12px;
-        border: 1px solid rgba(250, 250, 250, 0.3);
-        border-radius: 50%;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: all 0.3s;
-    }
-
-    .social-links a:hover {
-        background-color: #ED3B44;
-        border-color: #ED3B44;
-    }
-
-    /* Пошта */
-    .email-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-grow: 1;
-        /* Автоматичне розширення */
-        max-width: 100%;
-        height: 36px;
-        /* Менше за соцмережі */
-        font-size: 13px;
-        /* Оптимальний розмір */
-        border: 1px solid rgba(250, 250, 250, 0.3);
-        border-radius: 50px;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: all 0.3s;
-        white-space: nowrap;
-        padding: 8px 14px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .email-link:hover {
-        opacity: 0.85;
-    }
-}
-/* ====== 📲 Планшетна версія (768px - 1439px) ====== */
-@media screen and (min-width: 768px) and (max-width: 1439px) {
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        /* Вирівнюємо вліво */
-        justify-content: center;
-        text-align: left;
-        width: 100%;
-        min-height: 100vh;
-        padding: 32px;
-        background-image: url("../img/bg/herotablet-bg.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-color: #1C1D20;
-    }
-
-    /* Підтримка Retina-дисплеїв (планшети) */
-    @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-        .hero {
-            background-image: url("../img/bg/herotablet-bg@2x.png");
-        }
-    }
-        /* Контейнер секції */
-        .hero-container {
-            position: relative;
-            width: 100%;
-            max-width: 1440px;
-            min-height: 100vh;
-            margin: 0 auto;
-            padding: 0 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            /* Заголовок по центру, соцмережі внизу */
-        }
-
-   
-        /* Заголовок Hero */
-        .hero-title {
-            font-family: "Inter Tight", sans-serif;
-            font-weight: 500;
-            font-size: 64px;
-            /* Збільшено для планшетної версії */
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-            color: #fafafa;
-            text-align: left;
-            flex: 1;
-            /* Рівномірний розподіл місця */
-            display: flex;
-            align-items: center;
-        }
-
-        /* Контейнер соцмереж */
-        .social-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-            /* Притискаємо до правого краю */
-            gap: 8px;
-            width: 473px;
-            /* Фіксована ширина */
-            height: 55px;
-            /* Фіксована висота */
-            position: absolute;
-            bottom: 32px;
-            right: 32px;
-            /* Притискаємо до правого кута */
-        }
-
-    /* Соцмережі */
-    .social-links {
-        display: flex;
-        gap: 8px;
-    }
-
-    /* Стилі для соцмереж */
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 18px;
-        width: 55px;
-        height: 55px;
-        border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 50%;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: opacity 0.3s;
-    }
-
-    /* Робимо іконки білими */
-    .social-link svg,
-    .social-link use {
-        fill: #FAFAFA !important;
-    }
-
-    .social-link:hover {
-        opacity: 0.8;
-    }
-
-    /* Email */
-    .email-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: auto;
-        padding: 18px 24px;
-        border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 48px;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: opacity 0.3s;
-        white-space: nowrap;
-        height: 55px;
-    }
-
-    .email-link:hover {
-        opacity: 0.8;
-    }
-}
-
-/* ======= дисктопна версія  ======= */
-@media screen and (min-width: 1440px) {
-    .hero {
-        position: relative;
-        width: 100%;
-        height: 900px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding-left: 178px;
-
-
-
-        background:
-            url("../img/bg/herodesktop-bg.png") left / 50% 100% no-repeat,
-            #1C1D20 right / 50% 100% no-repeat;
-        background-color: #1C1D20;
-
-
-    }
-         /* Контейнер Hero */
-         .hero-container {
-             position: relative;
-             width: 100%;
-             max-width: 1440px;
-             height: 100%;
-             margin: 0 auto;
-             padding: 0 32px;
-             display: flex;
-             flex-direction: column;
-             justify-content: space-between;
-             /* Центрує заголовок, соцмережі внизу */
-         }
-
-    /* ======= Заголовок Hero ======= */
-    /* Стилі для заголовка */
-
-        /* Заголовок Hero */
-        .hero-title {
-            font-size: 90px;
-            font-weight: 500;
-            line-height: 1;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-            color: #FAFAFA;
-            max-width: 1084px;
-            width: 100%;
-            text-align: left;
-            flex: 1;
-            display: flex;
-            align-items: center;
-        }
-
-    /* Контейнер соцмереж + пошта */
-        /* Контейнер соцмереж */
-        .social-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 8px;
-            width: 473px;
-            height: 55px;
-            position: absolute;
-            bottom: 32px;
-            right: 32px;
-            /* Притискаємо до правого кута */
-        }
-
-    /* Соцмережі */
-    .social-links {
-        display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: row;
-            gap: 8px;
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 18px 20px;
-        width: 55px;
-        height: 55px;
-        border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 50%;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: opacity 0.3s;
-    }
-
-    .social-link svg,
-    .social-link use {
-        fill: #FAFAFA !important;
-    }
-
-    .social-link:hover {
-        opacity: 0.8;
-    }
-
-    /* Пошта */
-    .email-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: auto;
-        /* Автоматична ширина */
-        border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 48px;
-        padding: 18px 24px;
-        color: #FAFAFA;
-        text-decoration: none;
-        transition: opacity 0.3s;
-        white-space: nowrap;
-        /* Щоб текст не ламався */
-        height: 55px;
-        /* Робимо такої ж висоти, як іконки */
-    }
-
-    .email-link:hover {
-        opacity: 0.8;
-    }
+            width: 55px;
+            height: 55px;
+            padding: 16px;
+            font-size: 10px;
+            border: 1px solid rgba(250, 250, 250, 0.3);
+            border-radius: 50%;
+            color: #FAFAFA;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
 }
-
