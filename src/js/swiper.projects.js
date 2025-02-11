@@ -1,5 +1,7 @@
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import Swiper from 'swiper';
+import 'swiper/css';
+
+import { Keyboard, Mousewheel, Navigation } from 'swiper/modules';
 
 const prevButton = document.querySelector('.swiper-button-prev');
 const nextButton = document.querySelector('.swiper-button-next');
@@ -10,6 +12,7 @@ window.addEventListener('load', () => {
     spaceBetween: 20,
     freeMode: false,
     loop: false,
+    modules: [Navigation, Keyboard, Mousewheel],
     keyboard: {
       enabled: true,
       onlyInViewport: true,
@@ -25,6 +28,6 @@ window.addEventListener('load', () => {
     nextButton.disabled = swiper.activeIndex === swiper.slides.length - 1;
   }
 
-  swiper.on('slideChange', updateButtonState);
-  updateButtonState();
+  // swiper.on('slideChange', updateButtonState);
+  // updateButtonState();
 });
