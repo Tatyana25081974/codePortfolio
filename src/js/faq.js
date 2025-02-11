@@ -1,38 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const faqItems = document.querySelectorAll(".faq-item");
+import Accordion from 'accordion-js';
 
-    faqItems.forEach((item) => {
-        const button = item.querySelector(".faq-question");
+// Ініціалізація Accordion.js
+const accordionFaq = new Accordion('.js-list-container', {
+  duration: 1250,
+  panelClass: 'list-item-text',
+  showMultiple: true,
+  elementClass: 'list-item',
+  triggerClass: 'btn-faq',
+  activeClass: 'opens',
+  onOpen: function (currentElement) {
+    setTimeout(() => {
+      console.log('Открылся элемент:', currentElement);
+    }, 350);
+  },
+});
 
-        button.addEventListener("click", function () {
-            // Закриваємо всі відкриті елементи, крім поточного
-            faqItems.forEach((el) => {
-                if (el !== item) {
-                    el.classList.remove("active");
-                    const answer = el.querySelector(".faq-answer");
-                    answer.style.maxHeight = null;
-                    setTimeout(() => {
-                        answer.style.opacity = "0"; // Плавне зникнення
-                    }, 200); // Трохи затримуємо перед зникненням
-                }
-            });
-
-            // Перемикаємо клас active для поточного елемента
-            item.classList.toggle("active");
-
-            // Анімація відкриття/закриття
-            const answer = item.querySelector(".faq-answer");
-            if (item.classList.contains("active")) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                setTimeout(() => {
-                    answer.style.opacity = "1"; // Плавне підсвічування
-                }, 50);
-            } else {
-                answer.style.maxHeight = null;
-                setTimeout(() => {
-                    answer.style.opacity = "0"; // Плавне згасання
-                }, 200);
-            }
-        });
+// Ваш код для обробки кліків на FAQ елементи
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.faq-item .faq-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const item = this.closest('.faq-item');
+      item.classList.toggle('active');
+      const content = item.querySelector('.faq-content-text');
+      if (item.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = 0;
+      }
     });
+  });
 });
