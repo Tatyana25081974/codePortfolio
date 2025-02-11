@@ -70,15 +70,22 @@
 }
 
 .social-links a:hover,
-.email-link:hover {
+.social-links a:focus,
+
+.email-link:hover,
+.email-link:focus {
+    
     background-color: #ED3B44;
     border-color: #ED3B44;
     color: #FFFFFF;
     opacity: 0.85;
 }
+
 .social-links a,
 .email-link {
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
 }
 
 
@@ -162,7 +169,11 @@
 }
 
 .social-links a:hover,
-.email-link:hover {
+.social-links a:focus,
+
+.email-link:hover,
+.email-link:focus {
+  
     background-color: #ED3B44;
     border-color: #ED3B44;
     color: #FFFFFF;
@@ -171,7 +182,9 @@
 
 .social-links a,
 .email-link {
-    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
 }
 
 
