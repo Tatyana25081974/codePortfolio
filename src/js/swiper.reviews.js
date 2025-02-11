@@ -1,36 +1,35 @@
-import Swiper from 'swiper';
-import '../css/reviews.css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import Swiper from 'swiper';
+// import { Navigation, Pagination } from 'swiper/modules';
+// import '../css/reviews.css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css';
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.swiper-reviews', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20, // Додаємо відступ між слайдами
-    navigation: {
-      nextEl: '.swiper-button-next-reviews',
-      prevEl: '.swiper-button-prev-reviews',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 1, 
-      },
-      768: {
-        slidesPerView: 2, 
-        spaceBetween: 32
-      },
-      1024: {
-        slidesPerView: 4, 
-        spaceBetween: 16,
-      },
-    },
-  });
-});
+// function initSwiperReviews() {
+//   const swiperContainer = document.querySelector('.swiper-reviews');
+//   if (!swiperContainer || !swiperContainer.querySelector('.swiper-slide')) {
+//     console.warn('Swiper не ініціалізований, бо слайди ще не завантажились.');
+//     return;
+//   }
+
+//   new Swiper('.swiper-reviews', {
+//     modules: [Navigation, Pagination],
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//     breakpoints: {
+//       768: { slidesPerView: 2 },
+//       1440: { slidesPerView: 4 },
+//     },
+//   });
+// }
 
 // import Swiper from 'swiper';
 // import '../css/reviews.css';
@@ -60,12 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // function renderReviews(reviews) {
 //   const reviewsList = document.getElementById('reviews-list');
-  
+
 //   if (!reviewsList) {
 //     console.error('reviewsList не знайдено в DOM');
 //     return;
 //   }
-
 
 //   reviewsList.innerHTML = '';
 
@@ -97,11 +95,39 @@ document.addEventListener('DOMContentLoaded', () => {
 //       clickable: true,
 //     },
 //     breakpoints: {
-//       768: { slidesPerView: 2 }, 
-//       1440: { slidesPerView: 4 } 
+//       768: { slidesPerView: 2 },
+//       1440: { slidesPerView: 4 }
 //     },
 //   });
 // }
 // document.addEventListener('DOMContentLoaded', () => {
 //   initSwiperReviews();
 // });
+
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+function initSwiperReviews() {
+  new Swiper('.swiper-reviews', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next-reviews',
+      prevEl: '.swiper-button-prev-reviews',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1440: { slidesPerView: 4 },
+    },
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initSwiperReviews);
