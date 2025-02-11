@@ -69,9 +69,16 @@
     transition: all 0.3s;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.email-link:hover {
     background-color: #ED3B44;
     border-color: #ED3B44;
+    color: #FFFFFF;
+    opacity: 0.85;
+}
+.social-links a,
+.email-link {
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 
@@ -94,9 +101,7 @@
     text-overflow: ellipsis;
 }
 
-.email-link:hover {
-    opacity: 0.85;
-}
+
 
 @media only screen and (min-width: 768px) {
     .hero {
@@ -156,9 +161,17 @@
     transition: all 0.3s;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.email-link:hover {
     background-color: #ED3B44;
     border-color: #ED3B44;
+    color: #FFFFFF;
+    opacity: 0.85;
+}
+
+.social-links a,
+.email-link {
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 
@@ -180,9 +193,7 @@
     text-overflow: ellipsis;
 }
 
-.email-link:hover {
-    opacity: 0.85;
-}
+
 }
 @media only screen and (min-width: 1440px) {
     .hero {

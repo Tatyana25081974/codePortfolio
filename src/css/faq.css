@@ -151,6 +151,7 @@
     padding-top: 96px;
     padding-bottom: 96px;
   }
+
   .faq-container {
     max-width: 704px;
     height: auto;
@@ -204,6 +205,7 @@
     padding-top: 164px;
     padding-bottom: 164px;
   }
+
   .faq-container {
     max-width: 1440px;
     width: 100%;
@@ -212,6 +214,7 @@
     gap: 32px;
     padding: 0 32px;
   }
+
   .faq-title {
     margin-bottom: 0;
   }
@@ -236,8 +239,10 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    justify-content: space-between; /* Рівномірно розподілити вміст */
+    justify-content: space-between;
+    /* Рівномірно розподілити вміст */
   }
+
   .faq-item-1 {
     border-right: 1px solid #333;
     padding-right: 32px;
@@ -245,6 +250,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   .faq-item-2 {
     order: 2;
     border-right: 1px solid #333;
@@ -253,6 +259,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   .faq-item-3 {
     order: 4;
     border-right: 1px solid #333;
@@ -261,18 +268,21 @@
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   .faq-item-4 {
     order: 1;
     padding-left: 32px;
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   .faq-item-5 {
     order: 3;
     padding-left: 32px;
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   .faq-item-6 {
     order: 5;
     padding-left: 32px;
