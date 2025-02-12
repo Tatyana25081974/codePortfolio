@@ -20,11 +20,50 @@
   <script type="module" crossorigin src="/codePortfolio/index.js"></script>
   <link rel="modulepreload" crossorigin href="/codePortfolio/assets/vendor-ChYMF3Hy.js">
   <link rel="stylesheet" crossorigin href="/codePortfolio/assets/vendor-B9Q3JDqL.css">
-  <link rel="stylesheet" crossorigin href="/codePortfolio/assets/index-0xuSo5CJ.css">
+  <link rel="stylesheet" crossorigin href="/codePortfolio/assets/index-BX_jrxrW.css">
 </head>
 
 <body>
-  
+  <header class="header">
+    <div class="container-header">
+        <div class="header_logo">
+            <img src="../img/content/logo-foto.jpg" srcset="../img/content/logo-foto@2x.jpg 2x" alt="jefferson.png" class="logo_img" />
+
+            <p class="logo_legend">jefferson*</p>
+        </div>
+
+        <div class="menu_container">
+            <button class="menu_trigger">Menu</button>
+            <nav class="menu">
+                <a href="#about-me" class="nav_link">About me</a>
+                <a href="#benefits" class="nav_link">Benefits</a>
+                <a href="#projects" class="nav_link">Projects</a>
+                <a href="#faq" class="nav_link">FAQ</a>
+                <a href="#reviews" class="nav_link">Reviews</a>
+            </nav>
+        </div>
+        <a href="#work-together" class="order_btn wide">Order the project</a>
+
+        <svg class="header_menu_img">
+            <use href="../img/icon.svg#icon-mobile-menu"></use>
+        </svg>
+    </div>
+
+    <div class="modal_window box">
+        <div class="modal_content overlay">
+            <svg class="x_icon">
+                <use href="../img/icon.svg#icon-x"></use>
+            </svg>
+            <ul class="modal_menu">
+                <li><a class="modal_list_item" href="#about-me">About me</a></li>
+                <li><a class="modal_list_item" href="#benefits">Benefits</a></li>
+                <li><a class="modal_list_item" href="#projects">Projects</a></li>
+                <li><a class="modal_list_item" href="#faq">FAQ</a></li>
+            </ul>
+            <button type="button" class="order_btn">Order the project</button>
+        </div>
+    </div>
+</header>
   <main>
     <!-- Loads the specified .html file -->
     <section class="hero">
