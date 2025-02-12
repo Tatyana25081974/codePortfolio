@@ -4,6 +4,19 @@ import '../css/reviews.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+function showToast(message, type = 'error') {
+  iziToast[type]({
+    title: type === 'error' ? 'Error' : 'Success',
+    message,
+    position: 'topRight',
+    timeout: 5000,
+    messageSize: '15',
+    titleSize: '15',
+  });
+}
 
 function initSwiperReviews() {
   const swiper = new Swiper('.swiper-reviews', {
@@ -72,6 +85,7 @@ async function fetchReviews() {
   } catch (error) {
     console.error('Error fetching reviews:', error);
     showNotFoundMessage();
+    showToast('Failed to load reviews. Please try again.', 'error');
   }
 }
 
