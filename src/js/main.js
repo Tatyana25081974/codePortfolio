@@ -9,3 +9,4 @@ import './slider.js';
 import './swiper-about.js';
 import './swiper.projects.js';
 import './swiper.reviews.js';
+import './header.js'
