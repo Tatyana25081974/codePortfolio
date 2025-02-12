@@ -107,10 +107,9 @@
 .button-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   position: relative;
-  margin-top: 32px;
-  height: 64px;
+  gap: 12px;
 }
 
 .button-wrapper .swiper-button-next,
@@ -121,6 +120,8 @@
   border-radius: 60px;
   width: 52px;
   height: 52px;
+  padding: 13px;
+  margin-top: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -132,19 +133,12 @@
   display: none;
 }
 
-.project-next-icon {
-  stroke: #fafafa;
-  pointer-events: none;
-}
-
-.project-prev-icon {
-  stroke: #fafafa;
-  pointer-events: none;
-}
-
 @media screen and (min-width: 768px) {
   .projects-container {
     max-width: 768px;
+  }
+
+  .swiper-slide {
   }
 
   .project-text-container {
@@ -194,12 +188,24 @@
     width: 100%;
     max-width: 614px;
   }
+
+  .button-wrapper {
+    gap: 20px;
+  }
+
+  .button-wrapper .swiper-button-next,
+.button-wrapper .swiper-button-prev {
+  width: 68px;
+  height: 68px;
+  padding: 17px;
+  margin-top: 64px;
+}
 }
 
 @media screen and (min-width: 1440px) {
   .projects-container {
     max-width: 1440px;
-    padding: 32px;
+    padding: 82px 32px 0px 32px;
   }
 
   .swiper-slide {
