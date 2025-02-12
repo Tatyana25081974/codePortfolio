@@ -83,6 +83,10 @@
   .reviews-section {
     padding: 96px 0;
   }
+  .review-item {
+    height: 302px;
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 1440px) {
