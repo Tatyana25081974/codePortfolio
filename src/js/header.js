@@ -1,29 +1,34 @@
-const burger_button = document.querySelector(".header_menu_img");
-const modal_window = document.querySelector(".modal_window");
-const close = document.querySelector(".x_icon");
-const menu_trigger = document.querySelector('.menu_trigger');
-const menu = document.querySelector('.menu');
+// Обробка мобільного меню
+const burgerMenu = document.querySelector(".burger-menu");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeMenu = document.querySelector(".close-menu");
+const navLinks = document.querySelectorAll(".mobile-menu a");
 
-burger_button.addEventListener("click", () => {
-    modal_window.classList.toggle("active");
+// Відкриття меню
+burgerMenu.addEventListener("click", () => {
+  mobileMenu.style.display = "flex";
 });
 
-close.addEventListener("click", () => {
-    modal_window.classList.remove("active");
+// Закриття меню
+closeMenu.addEventListener("click", () => {
+  mobileMenu.style.display = "none";
 });
 
-menu_trigger.addEventListener('click', () => {
-    menu.classList.toggle('active');
+// Закриття меню при натисканні на посилання
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.style.display = "none";
+  });
 });
 
-document.querySelectorAll(".modal_list_item").forEach(item => {
-    item.addEventListener("click", () => {
-        modal_window.classList.remove("active");
+// Плавний скролл для якірних посилань
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    document.getElementById(targetId).scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
-});
-
-document.querySelectorAll(".order_btn").forEach(element => {
-    element.addEventListener("click", () => {
-        modal_window.classList.remove("active");
-    });
+  });
 });
