@@ -240,13 +240,7 @@ body.menu-open {
         text-decoration: underline;
         cursor: pointer;
     }
-        /* Зміна кольору для кнопки "Menu" */
-        .nav-toggle:hover,
-        .nav-toggle:focus {
-            color: #ed3b44;
-            /* Червоний колір при наведенні */
-            transition: color 0.3s ease-in-out;
-        }
+       
 
     /* Навігація (за замовчуванням прихована) */
     .nav {
