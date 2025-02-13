@@ -14,7 +14,7 @@
 }
 
 .hero-container {
-    width: 375px;
+    
     margin: 0 auto;
     /* Центрування */
     display: flex;
@@ -37,7 +37,7 @@
 
 
 .social-container {
-    width: 342px;
+    
     height: 37px;
     display: flex;
     flex-direction: row;
