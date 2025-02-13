@@ -240,6 +240,13 @@ body.menu-open {
         text-decoration: underline;
         cursor: pointer;
     }
+        /* Зміна кольору для кнопки "Menu" */
+        .nav-toggle:hover,
+        .nav-toggle:focus {
+            color: #ed3b44;
+            /* Червоний колір при наведенні */
+            transition: color 0.3s ease-in-out;
+        }
 
     /* Навігація (за замовчуванням прихована) */
     .nav {
@@ -286,6 +293,22 @@ body.menu-open {
         text-align: center;
 
     }
+        /* Зміна кольору для пунктів меню */
+        .nav-list a:hover,
+        .nav-list a:focus {
+            color: #ed3b44;
+            /* Червоний */
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+                /* Для мобільного меню */
+                .mobile-menu a:hover,
+                .mobile-menu a:focus {
+                    color: #ed3b44;
+                    /* Червоний */
+                    text-decoration: none;
+                    transition: color 0.3s ease-in-out;
+                }
 
     /* Кнопка "Order the project" */
     .order-btn {
