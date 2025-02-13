@@ -1,42 +1,45 @@
 <header class="header">
-    <div class="container-header">
-        <div class="header_logo">
-            <img src="../img/content/logo-foto.jpg" srcset="
-          ../img/content/logo-foto@2x.jpg 2x
-        " alt="jefferson.png" class="logo_img" />
+    <div class="container container-header">
+        <a href="#" class="logo">
+            <img src="/img/content/logo-foto.jpg" alt="jefferson.png" class="logo_img" />
+            <span>Jefferson</span>
+        </a>
 
-            <p class="logo_legend">jefferson*</p>
-        </div>
+        <!-- Кнопка для відкриття меню на планшетах і десктопах -->
+        <button class="nav-toggle">Menu</button>
 
-        <div class="menu_container">
-            <button class="menu_trigger">Menu</button>
-            <nav class="menu">
-                <a href="#about-me" class="nav_link">About me</a>
-                <a href="#benefits" class="nav_link">Benefits</a>
-                <a href="#projects" class="nav_link">Projects</a>
-                <a href="#faq" class="nav_link">FAQ</a>
-                <a href="#reviews" class="nav_link">Reviews</a>
-            </nav>
-        </div>
-        <a href="#work-together" class="order_btn wide">Order the project</a>
-
-        <svg class="header_menu_img">
-            <use href="../img/icon.svg#icon-mobile-menu"></use>
-        </svg>
-    </div>
-
-    <div class="modal_window box">
-        <div class="modal_content overlay">
-            <svg class="x_icon">
-                <use href="../img/icon.svg#icon-x"></use>
-            </svg>
-            <ul class="modal_menu">
-                <li><a class="modal_list_item" href="#about-me">About me</a></li>
-                <li><a class="modal_list_item" href="#benefits">Benefits</a></li>
-                <li><a class="modal_list_item" href="#projects">Projects</a></li>
-                <li><a class="modal_list_item" href="#faq">FAQ</a></li>
+        <!-- Навігація для планшетів та десктопів -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#about" class="nav-link">About me</a></li>
+                <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
             </ul>
-            <button type="button" class="order_btn">Order the project</button>
+        </nav>
+
+        <a href="#work-together" class="order-btn">Order the project</a>
+
+        <!-- Бургер-меню для мобільних пристроїв -->
+        <button class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Мобільне меню -->
+        <div class="mobile-menu">
+            <button class="close-menu">&times;</button>
+            <ul>
+                <li><a href="#about" class="nav-link">About me</a></li>
+                <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
         </div>
     </div>
 </header>
+
+
+
+
