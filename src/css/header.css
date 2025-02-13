@@ -124,7 +124,7 @@
     align-items: center;
     justify-content: flex-start;
     z-index: 1000;
-    padding: 50px 0;
+    padding: 50px 20px;
     transition: left 0.4s ease-in-out;
     /* Анімація виїзду */
 }
