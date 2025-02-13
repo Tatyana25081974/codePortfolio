@@ -122,9 +122,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     z-index: 1000;
-    padding: 50px 20px;
+    padding: 50px 0;
     transition: left 0.4s ease-in-out;
     /* Анімація виїзду */
 }
@@ -156,17 +156,20 @@ body.menu-open {
     color: white;
     font-size: 32px;
     cursor: pointer;
-    
+
 }
 
 /* === ПУНКТИ МЕНЮ (з підкресленням) === */
 .mobile-menu ul {
     list-style: none;
     padding: 0;
+    margin-top: 302px;
+     
+        margin-bottom: auto;
 }
 
 .mobile-menu li {
-    margin: 15px 0;
+    margin: 5px o;
     text-align: center;
 }
 
@@ -175,8 +178,9 @@ body.menu-open {
     font-weight: 500;
     font-size: 16px;
     letter-spacing: -0.02em;
-    text-decoration: none;;
-    
+    text-decoration: none;
+    ;
+
 }
 
 /* === Підкреслення тексту === */
@@ -195,12 +199,41 @@ body.menu-open {
 .mobile-menu a:hover::after {
     width: 100%;
 }
+/* === КНОПКА ДЛЯ МОБІЛЬНОГО МЕНЮ === */
+.mobile-order-btn {
+    display: inline-block;
+    background: #ed3b44;
+    /* Червоний фон */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 60px;
+    border: none;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+    margin-top: 20px;
+    /* Відступ зверху */
+}
+
+/* Ефект при наведенні */
+.mobile-order-btn:hover {
+    background: #c32f38;
+    /* Темніший червоний */
+}
+
+/* Центруємо кнопку */
+.mobile-menu .mobile-order-btn {
+    width: auto;
+    min-width: 180px;
+}
 
 /* === Медіазапит для планшетів (min-width: 768px) === */
 
 @media only screen and (min-width: 768px) {
     .header {
-        padding: 32px;
+        padding: 32px 0;
     }
 
     /* Контейнер Header */
@@ -239,7 +272,7 @@ body.menu-open {
         text-decoration: underline;
         cursor: pointer;
     }
-       
+
 
     /* Навігація (за замовчуванням прихована) */
     .nav {
@@ -286,22 +319,24 @@ body.menu-open {
         text-align: center;
 
     }
-        /* Зміна кольору для пунктів меню */
-        .nav-list a:hover,
-        .nav-list a:focus {
-            color: #ed3b44;
-            /* Червоний */
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-                /* Для мобільного меню */
-                .mobile-menu a:hover,
-                .mobile-menu a:focus {
-                    color: #ed3b44;
-                    /* Червоний */
-                    text-decoration: none;
-                    transition: color 0.3s ease-in-out;
-                }
+
+    /* Зміна кольору для пунктів меню */
+    .nav-list a:hover,
+    .nav-list a:focus {
+        color: #ed3b44;
+        /* Червоний */
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    /* Для мобільного меню */
+    .mobile-menu a:hover,
+    .mobile-menu a:focus {
+        color: #ed3b44;
+        /* Червоний */
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
 
     /* Кнопка "Order the project" */
     .order-btn {
