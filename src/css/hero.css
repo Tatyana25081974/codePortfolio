@@ -87,7 +87,10 @@
         border-color 0.3s ease-in-out,
         color 0.3s ease-in-out;
 }
-
+.icon {
+    width: 17px;
+    height: 20px;
+}
 
 .email-link {
     flex-grow: 1;
@@ -185,6 +188,10 @@
     transition: background-color 0.3s ease-in-out,
         border-color 0.3s ease-in-out,
         color 0.3s ease-in-out;
+}
+.icon {
+    width: 20px;
+    height: 20px;
 }
 
 
