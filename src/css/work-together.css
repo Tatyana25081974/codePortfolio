@@ -12,11 +12,9 @@
     background-image: url('../img/bg/work-together-mobail-bg@2x.png');
   }
 }
-
-.work-together-container {
-  min-width: 320px;
-}
-
+/* .work-together-container {
+  padding: 0 16px;
+} */
 .work-together-title-container {
   display: flex;
   align-items: center;
@@ -25,6 +23,7 @@
 
 .work-together-logo {
   margin-right: 8px;
+  min-width: 44px;
 }
 
 .work-together-title {
@@ -40,6 +39,7 @@
 .work-together-contact-form {
   display: flex;
   flex-direction: column;
+  padding: 0 5px;
 }
 
 .work-together-input {
@@ -144,6 +144,7 @@ work-together-input::placeholder {
 .work-together-contacts-list {
   display: flex;
   gap: 4px;
+  flex-wrap: wrap;
   margin-top: 64px;
 }
 
@@ -253,6 +254,9 @@ body.modal-open {
     background-size: 85px 100%;
     background-position: right center;
     background-repeat: no-repeat;
+  }
+  .work-together-contact-form {
+    padding: 0;
   }
 }
 /* ====== Tablet  ====== */
