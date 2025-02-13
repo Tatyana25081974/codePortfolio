@@ -34,7 +34,9 @@ function initSwiperReviews() {
     keyboard: {
       enabled: true,
       onlyInViewport: true,
+      pageUpDown: false,
     },
+    watchOverflow: true,
     breakpoints: {
       768: { slidesPerView: 2 },
       1440: { slidesPerView: 4 },
@@ -45,11 +47,15 @@ function initSwiperReviews() {
         document
           .querySelector('.swiper-button-next-reviews')
           ?.classList.add('swiper-button-disabled-reviews');
+        this.allowSlideNext = false;
+        this.keyboard.disable();
       },
       reachBeginning: function () {
         document
           .querySelector('.swiper-button-prev-reviews')
           ?.classList.add('swiper-button-disabled-reviews');
+        this.allowSlidePrev = false;
+        this.keyboard.disable();
       },
       slideChange: function () {
         document
@@ -58,6 +64,9 @@ function initSwiperReviews() {
         document
           .querySelector('.swiper-button-prev-reviews')
           ?.classList.remove('swiper-button-disabled-reviews');
+        this.allowSlideNext = true;
+        this.allowSlidePrev = true;
+        this.keyboard.enable();
       },
     },
   });
@@ -81,7 +90,9 @@ async function fetchReviews() {
     console.log('Reviews Data:', data);
 
     renderReviews(data); // Спочатку рендеримо відгуки
-    setTimeout(initSwiperReviews, 100); // Чекаємо, щоб Swiper встиг побачити слайди
+    setTimeout(() => {
+      initSwiperReviews(); // Чекаємо, щоб Swiper встиг побачити слайди
+    }, 100);
   } catch (error) {
     console.error('Error fetching reviews:', error);
     showNotFoundMessage();
@@ -104,11 +115,11 @@ function renderReviews(reviews) {
     reviewItem.classList.add('swiper-slide', 'review-item'); // Додаємо клас
 
     reviewItem.innerHTML = `
-      <li class="review-card">
+      <div class="review-card">
         <img src="${avatar_url}" alt="${author}" class="review-avatar">
         <h3 class="review-author">${author}</h3>
         <p class="review-text">${review}</p>
-      </li>
+      </div>
     `;
 
     reviewsList.appendChild(reviewItem);
