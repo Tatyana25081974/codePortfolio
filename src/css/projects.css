@@ -10,6 +10,7 @@
   width: 100%;
   max-width: 375px;
   margin: auto;
+  padding-top: 64px;
 }
 
 .projects-tittle {
@@ -136,9 +137,7 @@
 @media screen and (min-width: 768px) {
   .projects-container {
     max-width: 768px;
-  }
-
-  .swiper-slide {
+    padding-top: 48px;
   }
 
   .project-text-container {
