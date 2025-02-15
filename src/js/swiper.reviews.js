@@ -33,10 +33,8 @@ function initSwiperReviews() {
     // },
     keyboard: {
       enabled: true,
-      onlyInViewport: true,
-      pageUpDown: false,
+      onlyInViewport: false,
     },
-    watchOverflow: true,
     breakpoints: {
       768: { slidesPerView: 2 },
       1440: { slidesPerView: 4 },
@@ -47,15 +45,11 @@ function initSwiperReviews() {
         document
           .querySelector('.swiper-button-next-reviews')
           ?.classList.add('swiper-button-disabled-reviews');
-        this.allowSlideNext = false;
-        this.keyboard.disable();
       },
       reachBeginning: function () {
         document
           .querySelector('.swiper-button-prev-reviews')
           ?.classList.add('swiper-button-disabled-reviews');
-        this.allowSlidePrev = false;
-        this.keyboard.disable();
       },
       slideChange: function () {
         document
@@ -64,9 +58,6 @@ function initSwiperReviews() {
         document
           .querySelector('.swiper-button-prev-reviews')
           ?.classList.remove('swiper-button-disabled-reviews');
-        this.allowSlideNext = true;
-        this.allowSlidePrev = true;
-        this.keyboard.enable();
       },
     },
   });
@@ -90,9 +81,7 @@ async function fetchReviews() {
     console.log('Reviews Data:', data);
 
     renderReviews(data); // Спочатку рендеримо відгуки
-    setTimeout(() => {
-      initSwiperReviews(); // Чекаємо, щоб Swiper встиг побачити слайди
-    }, 100);
+    setTimeout(initSwiperReviews, 100); // Чекаємо, щоб Swiper встиг побачити слайди
   } catch (error) {
     console.error('Error fetching reviews:', error);
     showNotFoundMessage();
@@ -116,8 +105,8 @@ function renderReviews(reviews) {
 
     reviewItem.innerHTML = `
       <div class="review-card">
-        <img src="${avatar_url}" alt="${author}" class="review-avatar">
-        <h3 class="review-author">${author}</h3>
+        <img src="${avatar_url}" alt="${author}" class="review-avatar ">
+        <h3 class="review-author review-name">${author}</h3>
         <p class="review-text">${review}</p>
       </div>
     `;
